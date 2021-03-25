@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 185">
+  <path
+    id="curve"
+    d="M73.2,100C77.2,93.9 138.7,51.8 251.8,53C363.1,54.2 422.6,93.3 426.9,100"
+    fill="transparent"
+  />
+  <text width="500">
+    <textPath href="#curve">Certificate of Rank Advancement</textPath>
+  </text>
+</svg>
