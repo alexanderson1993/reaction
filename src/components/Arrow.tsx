@@ -7,15 +7,8 @@ import { useLevelStore } from "../stores/levelStore";
 import { useLoadingSpring } from "../helpers/useLoadingSpring";
 
 const scaleInput = [0.2, 0.2, 0.2] as const;
-const Arrow = ({
-  cell,
-  direction = "r",
-}: {
-  cell: number;
-  direction: "l" | "r" | "u" | "d";
-}) => {
-  const scale = useLoadingSpring(scaleInput);
-
+const Arrow = ({ cell }: { cell: number }) => {
+  const direction = useLevelStore.getState().currentLevel?.[cell];
   const rotation =
     direction === "u"
       ? Math.PI / 2
@@ -25,19 +18,8 @@ const Arrow = ({
       ? Math.PI
       : 0;
 
-  const x = cell % 8;
-  const y = Math.floor(cell / 8);
-
   return (
-    <animated.group
-      rotation={[0, 0, rotation]}
-      scale={(scale as unknown) as Vector3}
-      position={[
-        0.05 + -5 / 2 + 5 / 16 + (5 / 8) * x,
-        5 / 2 - 5 / 16 - (5 / 8) * y,
-        0.25,
-      ]}
-    >
+    <animated.group rotation={[0, 0, rotation]} scale={[0.2, 0.2, 0.2]}>
       <mesh
         rotation={[Math.PI / 4, 0, Math.PI / 2]}
         position={[-0.5, 0, 0]}
@@ -66,8 +48,6 @@ const Arrow = ({
           transparent
         />
       </mesh>
-      <Electron shown scale={[1, 1, 1]} color={0x0088ff} />
-      <Electron shown scale={[1, 1, 1]} offset={0.2} color={0x0088ff} />
     </animated.group>
   );
 };

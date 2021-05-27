@@ -45,6 +45,7 @@ const Cloud = ({
         side={DoubleSide}
         emissive={color}
         emissiveIntensity={2}
+        depthWrite={false}
       />
     </mesh>
   );
@@ -70,28 +71,15 @@ const Wormhole = ({
 }) => {
   const color = colors[object];
 
-  const x = cell % 8;
-  const y = Math.floor(cell / 8);
-
   const maps = useTexture([distort1, distort2, distort3, distort4]);
 
   const meshRef = useRef<Group>();
   useFrame(({ camera }) => {
     meshRef.current?.quaternion.copy(camera.quaternion);
   });
-  const scale = useLoadingSpring();
 
   return (
-    <animated.group
-      ref={meshRef}
-      scale={(scale as unknown) as Vector3}
-      rotation={[0.5, 0, 0]}
-      position={[
-        -5 / 2 + 5 / 16 + (5 / 8) * x,
-        5 / 2 - 5 / 16 - (5 / 8) * y,
-        0.25,
-      ]}
-    >
+    <animated.group ref={meshRef} rotation={[0.5, 0, 0]}>
       <mesh scale={[0.1, 0.1, 0.1]} renderOrder={Infinity}>
         <sphereGeometry attach="geometry" args={[1, 16, 16]} />
         <meshBasicMaterial attach="material" color={0x000000} />

@@ -1,44 +1,20 @@
-import React from "react";
+import { animated } from "@react-spring/three";
+import React, { Suspense } from "react";
+import { useFrame } from "react-three-fiber";
 import { Vector3 } from "three";
 import { useLoadingSpring } from "../helpers/useLoadingSpring";
 import { useLevelStore } from "../stores/levelStore";
 import Arrow from "./Arrow";
-import Atom from "./Atom/Atom";
-import { CellLight } from "./CellLight";
+import Atom from "./Atom/NewAtom";
 import Mirror from "./Mirror";
 import Wormhole from "./Wormhole";
 
-export const Cell = ({ cell }: { cell: number }) => {
+const CellContents = ({ cell }: { cell: number }) => {
   const selector = React.useCallback(
     (state) => (state.currentLevel ? state.currentLevel[cell] : null),
     [cell]
   );
   const object = useLevelStore(selector);
-  const scale = useLoadingSpring();
-  const x = cell % 8;
-  const y = Math.floor(cell / 8);
-  return (
-    <group
-      position={[
-        -5 / 2 + 5 / 16 + (5 / 8) * x,
-        5 / 2 - 5 / 16 - (5 / 8) * y,
-        0.25,
-      ]}
-      scale={(scale as unknown) as Vector3}
-    >
-      <CellLight
-        type={
-          ["1", "2", "3", "4", "p"].includes(object)
-            ? "atom"
-            : object === "b"
-            ? "hole"
-            : object === "e"
-            ? "copy"
-            : ""
-        }
-      />
-    </group>
-  );
 
   if (!object) return null;
   if ("!@#$%^&*()".includes(object)) {
@@ -61,7 +37,7 @@ export const Cell = ({ cell }: { cell: number }) => {
     case "l":
     case "u":
     case "r":
-      return <Arrow cell={cell} direction={object} />;
+      return <Arrow cell={cell} />;
     case "m":
     case "R":
     case "L":
@@ -71,4 +47,30 @@ export const Cell = ({ cell }: { cell: number }) => {
     default:
       return null;
   }
+};
+
+export const Cell = ({
+  cell,
+  scale,
+}: {
+  cell: number;
+  scale: ReturnType<typeof useLoadingSpring>;
+}) => {
+  const x = cell % 8;
+  const y = Math.floor(cell / 8);
+
+  return (
+    <Suspense fallback={null}>
+      <animated.group
+        position={[
+          -5 / 2 + 5 / 16 + (5 / 8) * x,
+          5 / 2 - 5 / 16 - (5 / 8) * y,
+          0.25,
+        ]}
+        scale={scale as unknown as Vector3}
+      >
+        <CellContents cell={cell} />
+      </animated.group>
+    </Suspense>
+  );
 };

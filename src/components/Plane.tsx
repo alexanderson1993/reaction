@@ -15,35 +15,18 @@ const Plane = () => {
         rotation={[Math.PI / 2, 0, 0]}
         position={[0, 0, 0.02]}
       />
-      <Reflector
-        resolution={2048}
-        args={[geoWidth, geoWidth]}
-        mirror={0.75}
-        mixBlur={10}
-        mixStrength={2}
-        rotation={[0, 0, 0]}
-        blur={[500, 500]}
-        minDepthThreshold={0.3}
-        maxDepthThreshold={2}
-        depthScale={0.5}
-        depthToBlurRatioBias={0.4}
-        debug={0}
-        distortion={0}
-        renderOrder={-100}
-      >
-        {(Material, props) => (
-          <Material
-            color="#9f9fc5"
-            metalness={0.5}
-            roughness={0.8}
-            {...props}
-            transparent
-            opacity={0.8}
-            depthWrite={false}
-            depthTest={false}
-          />
-        )}
-      </Reflector>
+      <pointLight position={[1, 1, 1.5]} intensity={2} color={0x0088ff} />;
+      <mesh>
+        <planeBufferGeometry args={[5, 5]} />
+        <meshStandardMaterial
+          metalness={0.5}
+          roughness={0.8}
+          transparent={false}
+          color={0x00aaff}
+          opacity={0.5}
+          depthWrite={false}
+        />
+      </mesh>
     </group>
   );
 };

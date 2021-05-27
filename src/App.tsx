@@ -1,8 +1,6 @@
-import { useSpring } from "@react-spring/core";
-import { animated } from "@react-spring/three";
-import { OrbitControls, useAspect, Text } from "@react-three/drei";
-import React, { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas, Object3DNode, useFrame, useThree } from "react-three-fiber";
+import { OrbitControls } from "@react-three/drei";
+import React, { Suspense } from "react";
+import { Canvas, useThree } from "react-three-fiber";
 import { StarsContainer } from "./components/StarsContainer";
 import "./components/musicPlayer";
 import { GameCanvas } from "./components/GameCanvas";
@@ -12,19 +10,10 @@ import { Color, Vector3 } from "three";
 import { Planet } from "./components/Planet";
 import courseList from "./components/gameData.json";
 import { useLevelStore } from "./stores/levelStore";
-
+import CourseComplete from "./components/CourseComplete";
 function CorrectLighting() {
   const { gl } = useThree();
   gl.physicallyCorrectLights = true;
-  const counter = useRef(0);
-  useFrame(() => {
-    if (counter.current > 100) return;
-    if (counter.current > 60) {
-      useLevelStore.getState().setRendered();
-      counter.current = 5000;
-    }
-    counter.current += 1;
-  });
   return null;
 }
 const Credits = () => {
@@ -60,39 +49,74 @@ const Credits = () => {
       <div className={`credits ${state === "credits" ? "active" : ""}`}>
         <Title />
         <h2>A game by Alex Anderson</h2>
+        <small>Inspired by Big Bang Reaction by Freeverse Software</small>
         <button
-          className="gradient-box"
+          className="gradient-box start-game"
           onClick={() => useLevelStore.getState().showCourses()}
         >
           Start Game
-        </button>
-        <div className="spacer" />
-        <div className="flex-vertical">
-          <small>Inspired by Big Bang Reaction by Freeverse Software</small>
-          <small>Built with Three.js by Mr. Doob</small>
-          <small>
-            Built with React-Three-Fiber, React-Spring, and Zustand by Paul
-            Henschel
-          </small>
-          <small>Built with Immer by Michel Weststrate</small>
-          <small>Sound Effects by Alex Kontis-Carrington</small>
-          <small>Music from https://filmmusic.io</small>
-          <small>
-            "Floating Cities" by Kevin MacLeod (https://incompetech.com)
-          </small>
-          <small>
-            License: CC BY (http://creativecommons.org/licenses/by/4.0/)
-          </small>
-        </div>
+        </button>{" "}
       </div>
     </div>
   );
 };
 
+function Score() {
+  const state = useLevelStore((store) => store.state);
+  const levelIndex = useLevelStore((store) => store.levelIndex);
+  const courseIndex = useLevelStore((store) => store.courseIndex);
+  const strokes = useLevelStore((store) => store.strokes);
+  const levelCount = courseList[courseIndex ?? -1]?.levels.length;
+  const par = courseList[courseIndex ?? -1]?.levels[levelIndex ?? -1]?.par;
+  return (
+    <div
+      className={`score ${
+        state === "playing" || state === "loading" ? "playing" : ""
+      }`}
+    >
+      <p>Strokes: {strokes?.[levelIndex ?? -1] || 0}</p>
+      <p>
+        Level: {(levelIndex ?? -1) + 1} / {levelCount || 0}
+      </p>
+      <p>Par: {par}</p>
+    </div>
+  );
+}
+function GameButtons() {
+  const state = useLevelStore((store) => store.state);
+
+  return (
+    <div
+      className={`game-buttons ${
+        state === "loading" || state === "playing" || state === "summary"
+          ? "playing"
+          : ""
+      }`}
+    >
+      {state === "loading" ||
+        (state === "playing" && (
+          <button
+            className={`gradient-box go-back`}
+            onClick={() => useLevelStore.getState().restartLevel()}
+          >
+            Restart Level
+          </button>
+        ))}
+      <button
+        className={`gradient-box go-back`}
+        onClick={() => useLevelStore.getState().reset()}
+      >
+        Go Back
+      </button>
+    </div>
+  );
+}
 function App() {
   return (
     <>
       <Credits />
+      <Score />
+      <GameButtons />
       <Canvas
         camera={{
           far: 10000,
@@ -104,15 +128,15 @@ function App() {
         <CorrectLighting />
         <Suspense fallback={null}>
           <ambientLight intensity={0.1} />
+          <CourseComplete />
           <GameCanvas />
-          <OrbitControls />
           <StarsContainer />
           <Planet scale={[10, 10, 10]} position={[-25, -3, -20]} />
           <Star
             scale={[20, 20, 20]}
-            position={[16, 5, -5]}
-            color1={new Color(0x224488)}
-            color2={new Color(0xf6fcff)}
+            position={[20, 5, -15]}
+            color1={new Color("orange")}
+            color2={new Color("red")}
           />
         </Suspense>
       </Canvas>

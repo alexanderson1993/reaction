@@ -14,5 +14,6 @@ export function CellLight({
       : type === "copy"
       ? 0xffad00
       : 0x000000;
-  return <Light color={lightColor} />;
+  return null;
+  // return <Light color={lightColor} />;
 }

@@ -50,8 +50,12 @@ body,
 
 h2 {
   font-weight: 300;
+  margin-bottom: 0;
 }
 
+.start-game {
+  margin-top: 2rem;
+}
 .title-container {
   margin: 1rem 3rem;
   height: calc(100vh - 2rem);
@@ -125,7 +129,7 @@ button.link:focus {
   height: 44px;
   width: 200px;
   border: none;
-  background: transparent;
+  background: rgb(0 0 0 / 0.5);
   color: white;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   font-size: 24px;
@@ -134,9 +138,10 @@ button.link:focus {
   box-shadow: 3px 3px 0px transparent;
   transition: box-shadow 0.3s ease;
   pointer-events: all;
+  cursor: pointer;
 }
 .gradient-box:before {
-  z-index: -1;
+  z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
@@ -257,4 +262,44 @@ button.link:focus {
 }
 .course-list h1 {
   font-size: 2rem;
+}
+.score {
+  height: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  color: white;
+  font-size: 2rem;
+  padding: 2rem 0;
+  font-variant-numeric: tabular-nums;
+  transition: transform 1s ease;
+  transform: translateY(-250%);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0 0 0 /0.7) 10%,
+    rgb(0 0 0 /0.5) 50%,
+    rgb(0 0 0 /0)
+  );
+}
+.score.playing {
+  transform: translateY(0);
+}
+.game-buttons {
+  z-index: 1;
+  position: fixed;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  transition: transform 1s ease;
+  transform: translateY(250%);
+}
+.game-buttons.playing {
+  transform: translateY(0);
 }

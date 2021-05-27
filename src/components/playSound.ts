@@ -3,7 +3,9 @@ const audioContext: AudioContext = new AudioContext();
 export function playSound(opts: {
   muted?: boolean;
   volume?: number;
+  loop?: boolean;
   url: string;
+  pitch?: boolean;
 }) {
   const volume = opts.muted ? 0 : opts.volume || 1;
   const asset = opts.url;
@@ -23,13 +25,21 @@ export function playSound(opts: {
               gain: audioContext.createGain(),
             };
             //Create a new buffer and set it to the specified channel.
+            if (opts.pitch) {
+              sound.source.playbackRate.setValueAtTime(
+                1 + (Math.random() - 0.5) * 0.3,
+                0
+              );
+            }
             sound.source.buffer = buffer;
+            sound.source.loop = opts.loop || false;
             // Use an x * x curve, since linear isn't super great with volume.
             sound.gain.gain.setValueAtTime(volume * volume, 0);
             sound.source.connect(sound.gain);
 
             sound.gain.connect(audioContext.destination);
             sound.source.start();
+            console.log(sound);
           },
           function onFailure() {
             // console.error(new Error("Decoding the audio buffer failed"));

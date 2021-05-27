@@ -21,13 +21,8 @@ const Mirror = ({
   direction = "m",
 }: {
   cell: number;
-  direction: "m" | "mL" | "mR";
+  direction: "m" | "L" | "R";
 }) => {
-  const scale = useLoadingSpring();
-
-  const x = cell % 8;
-  const y = Math.floor(cell / 8);
-
   const radiance = useCubeTexture(
     [radPosX, radNegX, radPosY, radNegY, radPosZ, radNegZ],
     { path: "." }
@@ -41,20 +36,13 @@ const Mirror = ({
     return [geometry];
   }, [direction]);
   return (
-    <animated.group
-      position={[
-        -5 / 2 + 5 / 16 + (5 / 8) * x,
-        5 / 2 - 5 / 16 - (5 / 8) * y,
-        0.25,
-      ]}
-      scale={(scale as unknown) as [number, number, number]}
-    >
+    <animated.group>
       <mesh
         scale={direction === "m" ? [0.3, 0.3, 0.3] : [0.25, 0.05, 0.2]}
         rotation={
           direction === "m"
             ? [Math.PI / 2, Math.PI / 4, 0]
-            : direction === "mL"
+            : direction === "L"
             ? [0, 0, Math.PI / 4]
             : [0, 0, -Math.PI / 4]
         }

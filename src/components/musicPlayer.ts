@@ -1,4 +1,9 @@
 import { playSound } from "./playSound";
-import song1 from "./music/floating-cities.ogg";
 
-// playSound({ url: song1, volume: 0.5 });
+let playing = false;
+document.addEventListener("click", () => {
+  if (!playing) {
+    playing = true;
+    playSound({ url: "/music/void.ogg", loop: true, volume: 0.5 });
+  }
+});

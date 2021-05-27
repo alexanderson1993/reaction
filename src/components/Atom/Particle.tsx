@@ -1,9 +1,10 @@
 import React from "react";
 import { useFrame, MouseEvent } from "react-three-fiber";
 import { useSpring, animated } from "react-spring/three";
-import { Color, Mesh, PointLight, Vector3 } from "three";
+import { Color, Mesh, PointLight, SphereBufferGeometry, Vector3 } from "three";
 import Light from "../Light";
 
+const geometry = new SphereBufferGeometry(1, 16, 16);
 function Particle({
   position,
   shown,
@@ -37,11 +38,14 @@ function Particle({
   });
   return (
     <group ref={particleRef}>
-      <animated.mesh scale={(scale as unknown) as Vector3} onClick={onClick}>
-        <sphereBufferGeometry attach="geometry" args={[1, 16, 16]} />
+      <animated.mesh
+        geometry={geometry}
+        scale={scale as unknown as Vector3}
+        onClick={onClick}
+      >
         <animated.meshStandardMaterial
           attach="material"
-          emissive={(animatedColor as unknown) as Color}
+          emissive={animatedColor as unknown as Color}
           emissiveIntensity={emissive}
           color={animatedColor}
           transparent

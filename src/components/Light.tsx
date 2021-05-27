@@ -6,19 +6,11 @@ import { useLevelStore } from "../stores/levelStore";
 
 export default function Light(props: PointLightProps) {
   const ref = useRef<PointLight>();
-  const [{ intensity }, set] = useSpring(() => ({
+  const state = useLevelStore((store) => store.state);
+
+  const { intensity } = useSpring({
     config: { tension: 100, friction: 15 },
-    intensity: useLevelStore.getState().loading ? 0 : 1,
-  }));
-  useEffect(() => {
-    const unsub = useLevelStore.subscribe(
-      (state) => {
-        if (state === true) set({ intensity: 0 });
-        if (state === false) set({ intensity: 1 });
-      },
-      (state) => state.loading
-    );
-    return () => unsub();
-  }, []);
-  return <animated.pointLight ref={ref} {...props} intensity={intensity} />;
+    intensity: state !== "playing" ? 0 : 1,
+  });
+  return null; //<animated.pointLight ref={ref} {...props} intensity={intensity} />;
 }
