@@ -140,7 +140,7 @@ export const useLevelStore = create<{
         .map((_, i) => null),
       currentLevel:
         gameData[state.courseIndex ?? 0].levels[state.levelIndex ?? -1]?.rows,
-      strokes: { ...state.strokes, [state.levelIndex || -1]: 0 },
+      strokes: { ...state.strokes, [state.levelIndex ?? -1]: 0 },
     }));
   },
   incrementStrokes: () => {
@@ -240,9 +240,9 @@ export const useLevelStore = create<{
 
       if (
         newX >= 0 &&
-        newX <= 8 &&
+        newX <= 7 &&
         newY >= 0 &&
-        newY <= 8 &&
+        newY <= 7 &&
         Number.isInteger(newX) &&
         Number.isInteger(newY)
       ) {
@@ -320,14 +320,10 @@ export const useLevelStore = create<{
             for (let y = 0; y < 8; y++) {
               for (let x = 0; x < 8; x++) {
                 const otherCellIndex = y * 8 + x;
-                if (
-                  get().currentLevel?.[otherCellIndex] === cell &&
-                  y !== newY &&
-                  x !== newX
-                ) {
-                  playSound({ url: "/wav/wormhole.wav", pitch: true });
-                  get().setParticle(particleIndex, [x, y, dir]);
-                }
+                if (get().currentLevel?.[otherCellIndex] !== cell) continue;
+                if (y === newY && x === newX) continue;
+                playSound({ url: "/wav/wormhole.wav", pitch: true });
+                get().setParticle(particleIndex, [x, y, dir]);
               }
             }
             break;
@@ -344,5 +340,3 @@ export const useLevelStore = create<{
     }
   },
 }));
-
-window.levelStore = useLevelStore;

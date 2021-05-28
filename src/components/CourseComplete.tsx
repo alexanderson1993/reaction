@@ -42,12 +42,12 @@ export default function CourseComplete({
   const state = useLevelStore((state) => state.state);
   const strokes = useLevelStore((state) => state.strokes);
   const courseIndex = useLevelStore((state) => state.courseIndex);
-  const totalStrokes = Object.values(strokes || []).reduce(
+  const totalStrokes = Object.values(strokes ?? []).reduce(
     (acc, next) => acc + next,
     0
   );
   const totalPar =
-    courseList[courseIndex || -1]?.levels.reduce(
+    courseList[courseIndex ?? -1]?.levels.reduce(
       (acc, next) => acc + next.par,
       0
     ) || 0;

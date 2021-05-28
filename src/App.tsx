@@ -93,15 +93,14 @@ function GameButtons() {
           : ""
       }`}
     >
-      {state === "loading" ||
-        (state === "playing" && (
-          <button
-            className={`gradient-box go-back`}
-            onClick={() => useLevelStore.getState().restartLevel()}
-          >
-            Restart Level
-          </button>
-        ))}
+      {(state === "loading" || state === "playing") && (
+        <button
+          className={`gradient-box go-back`}
+          onClick={() => useLevelStore.getState().restartLevel()}
+        >
+          Restart Level
+        </button>
+      )}
       <button
         className={`gradient-box go-back`}
         onClick={() => useLevelStore.getState().reset()}

@@ -36,31 +36,31 @@ const Cloud = ({
   return (
     <mesh ref={ref} position={[0, 0, i / 100 / random.current]}>
       <circleBufferGeometry attach="geometry" args={[0.5, 8]} />
-      <meshLambertMaterial
+      <meshBasicMaterial
         attach="material"
         transparent
         alphaMap={map}
         opacity={1}
         color={color}
         side={DoubleSide}
-        emissive={color}
-        emissiveIntensity={2}
+        // emissive={color}
+        // emissiveIntensity={2}
         depthWrite={false}
       />
     </mesh>
   );
 };
 const colors = {
-  ")": 0xff00ff,
-  "!": 0xffff00,
-  "@": 0x00ffff,
-  "#": 0xff0088,
-  $: 0x00ff88,
-  "%": 0x8800ff,
-  "^": 0x88ff00,
-  "&": 0x0088ff,
-  "*": 0xff0000,
-  "(": 0x0000ff,
+  ")": 0xff0000,
+  "!": 0x00ff00,
+  "@": 0x0000ff,
+  "#": 0xffff00,
+  $: 0xff00ff,
+  "%": 0x00ffff,
+  "^": 0xffffff,
+  "&": 0x333333,
+  "*": 0xff8800,
+  "(": 0x00ff88,
 };
 const Wormhole = ({
   cell,

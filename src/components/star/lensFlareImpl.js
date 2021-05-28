@@ -21,7 +21,7 @@ var Lensflare = function () {
   Mesh.call(
     this,
     Lensflare.Geometry,
-    new MeshBasicMaterial({opacity: 0, transparent: true})
+    new MeshBasicMaterial({ opacity: 0, transparent: true })
   );
 
   this.type = "Lensflare";
@@ -58,8 +58,8 @@ var Lensflare = function () {
 
   var material1a = new RawShaderMaterial({
     uniforms: {
-      scale: {value: null},
-      screenPosition: {value: null},
+      scale: { value: null },
+      screenPosition: { value: null },
     },
     vertexShader: [
       "precision highp float;",
@@ -91,9 +91,9 @@ var Lensflare = function () {
 
   var material1b = new RawShaderMaterial({
     uniforms: {
-      map: {value: tempMap},
-      scale: {value: null},
-      screenPosition: {value: null},
+      map: { value: tempMap },
+      scale: { value: null },
+      screenPosition: { value: null },
     },
     vertexShader: [
       "precision highp float;",
@@ -144,11 +144,11 @@ var Lensflare = function () {
 
   var material2 = new RawShaderMaterial({
     uniforms: {
-      map: {value: null},
-      occlusionMap: {value: occlusionMap},
-      color: {value: new Color(0xffffff)},
-      scale: {value: new Vector2()},
-      screenPosition: {value: new Vector3()},
+      map: { value: null },
+      occlusionMap: { value: occlusionMap },
+      color: { value: new Color(0xffffff) },
+      scale: { value: new Vector2() },
+      screenPosition: { value: new Vector3() },
     },
     vertexShader: shader.vertexShader,
     fragmentShader: shader.fragmentShader,
@@ -311,11 +311,11 @@ var LensflareElement = function (texture, size, distance, color) {
 
 LensflareElement.Shader = {
   uniforms: {
-    map: {value: null},
-    occlusionMap: {value: null},
-    color: {value: null},
-    scale: {value: null},
-    screenPosition: {value: null},
+    map: { value: null },
+    occlusionMap: { value: null },
+    color: { value: null },
+    scale: { value: null },
+    screenPosition: { value: null },
   },
 
   vertexShader: [
@@ -381,26 +381,7 @@ Lensflare.Geometry = (function () {
   var geometry = new BufferGeometry();
 
   var float32Array = new Float32Array([
-    -1,
-    -1,
-    0,
-    0,
-    0,
-    1,
-    -1,
-    0,
-    1,
-    0,
-    1,
-    1,
-    0,
-    1,
-    1,
-    -1,
-    1,
-    0,
-    0,
-    1,
+    -1, -1, 0, 0, 0, 1, -1, 0, 1, 0, 1, 1, 0, 1, 1, -1, 1, 0, 0, 1,
   ]);
 
   var interleavedBuffer = new InterleavedBuffer(float32Array, 5);
@@ -418,4 +399,4 @@ Lensflare.Geometry = (function () {
   return geometry;
 })();
 
-export {Lensflare, LensflareElement};
+export { Lensflare, LensflareElement };
