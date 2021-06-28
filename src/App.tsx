@@ -12,6 +12,7 @@ import { Score } from "./Score";
 import { Credits } from "./Credits";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import Dialog from "./Dialog";
+
 function CorrectLighting() {
   const { gl } = useThree();
   gl.physicallyCorrectLights = true;
@@ -32,6 +33,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Credits />
       <Score />
+
       <GameButtons />
       <Canvas
         camera={{
