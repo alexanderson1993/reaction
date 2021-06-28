@@ -1,6 +1,6 @@
 import React from "react";
-import { useFrame } from "react-three-fiber";
-import { animated } from "react-spring/three";
+import { useFrame } from "@react-three/fiber";
+import { animated } from "@react-spring/three";
 import fade from "./fade.jpg";
 import mapImg from "./map.jpg";
 import { useTexture } from "@react-three/drei";

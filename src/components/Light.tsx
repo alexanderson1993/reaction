@@ -1,6 +1,6 @@
 import { useSpring, animated } from "@react-spring/three";
 import React, { useEffect, useRef } from "react";
-import { PointLightProps, useFrame } from "react-three-fiber";
+import { PointLightProps, useFrame } from "@react-three/fiber";
 import { PointLight } from "three";
 import { useLevelStore } from "../stores/levelStore";
 

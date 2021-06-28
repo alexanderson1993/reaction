@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-// A THREE.js React renderer, see: https://github.com/drcmda/react-three-fiber
+// A THREE.js React renderer, see: https://github.com/drcmda/@react-three/fiber
 import Electron from "./Atom/Electron";
-import { useSpring, animated } from "react-spring/three";
+import { useSpring, animated } from "@react-spring/three";
 import { Color, Vector3 } from "three";
 import { useLevelStore } from "../stores/levelStore";
 import { useLoadingSpring } from "../helpers/useLoadingSpring";

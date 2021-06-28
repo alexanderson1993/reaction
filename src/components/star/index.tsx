@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { useFrame } from "react-three-fiber";
+import { useFrame } from "@react-three/fiber";
 import {
   TextureLoader,
   RepeatWrapping,

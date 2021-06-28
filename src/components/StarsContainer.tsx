@@ -1,7 +1,7 @@
 import React from "react";
 import { Stars } from "@react-three/drei";
 import { useRef } from "react";
-import { useFrame } from "react-three-fiber";
+import { useFrame } from "@react-three/fiber";
 import { Color, Mesh } from "three";
 
 const bgColor = new Color(0x040210);

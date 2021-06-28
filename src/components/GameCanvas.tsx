@@ -9,7 +9,7 @@ import { Particles } from "./Particles";
 import Plane from "./Plane";
 import { useLoadingSpring } from "../helpers/useLoadingSpring";
 import { CellElectrons } from "./CellElectrons";
-import { useFrame } from "react-three-fiber";
+import { useFrame } from "@react-three/fiber";
 
 export const GameCanvas = () => {
   const playing = ["loading", "playing"].includes(

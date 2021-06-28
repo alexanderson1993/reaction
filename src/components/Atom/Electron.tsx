@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { useFrame } from "react-three-fiber";
-import { animated, useSpring } from "react-spring/three";
+import { useFrame } from "@react-three/fiber";
+import { animated, useSpring } from "@react-spring/three";
 import {
   Color,
   Curve,
@@ -57,12 +57,12 @@ const Electron = ({
     <group ref={group} visible={shown}>
       <animated.mesh
         geometry={geometry}
-        scale={(animatedScale as unknown) as Vector3}
+        scale={animatedScale as unknown as Vector3}
       >
         <meshLambertMaterial
           attach="material"
           color={color}
-          emissive={(color as unknown) as Color}
+          emissive={color as unknown as Color}
           emissiveIntensity={intensity}
           transparent
           alphaMap={texture}

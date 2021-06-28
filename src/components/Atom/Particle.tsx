@@ -1,6 +1,6 @@
 import React from "react";
-import { useFrame, MouseEvent } from "react-three-fiber";
-import { useSpring, animated } from "react-spring/three";
+import { useFrame } from "@react-three/fiber";
+import { useSpring, animated } from "@react-spring/three";
 import { Color, Mesh, PointLight, SphereBufferGeometry, Vector3 } from "three";
 import Light from "../Light";
 

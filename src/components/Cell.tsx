@@ -1,6 +1,6 @@
 import { animated } from "@react-spring/three";
 import React, { Suspense } from "react";
-import { useFrame } from "react-three-fiber";
+import { useFrame } from "@react-three/fiber";
 import { Vector3 } from "three";
 import { useLoadingSpring } from "../helpers/useLoadingSpring";
 import { useLevelStore } from "../stores/levelStore";

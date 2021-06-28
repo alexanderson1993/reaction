@@ -1,7 +1,7 @@
 import { useSpring, animated } from "@react-spring/three";
 import { Html } from "@react-three/drei";
 import React, { useMemo, useRef, useLayoutEffect } from "react";
-import { useLoader } from "react-three-fiber";
+import { useLoader } from "@react-three/fiber";
 import { Color, FontLoader, Mesh, Vector3 } from "three";
 import { useLevelStore } from "../stores/levelStore";
 import courseList from "./gameData.json";

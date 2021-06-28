@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { useFrame } from "react-three-fiber";
-import { useSpring, animated } from "react-spring/three";
+import { useFrame } from "@react-three/fiber";
+import { useSpring, animated } from "@react-spring/three";
 import { Color, DoubleSide, Group, Mesh, Texture, Vector3 } from "three";
 import { useTexture } from "@react-three/drei";
 

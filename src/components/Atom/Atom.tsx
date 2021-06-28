@@ -1,10 +1,10 @@
 import * as THREE from "three";
 import React, { useRef } from "react";
-// A THREE.js React renderer, see: https://github.com/drcmda/react-three-fiber
-import { useFrame, MouseEvent } from "react-three-fiber";
+// A THREE.js React renderer, see: https://github.com/drcmda/@react-three/fiber
+import { useFrame } from "@react-three/fiber";
 import Particle from "./Particle";
 import Electron from "./Electron";
-import { useSpring, animated } from "react-spring/three";
+import { useSpring, animated } from "@react-spring/three";
 import {
   Color,
   Group,

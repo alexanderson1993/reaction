@@ -39,7 +39,6 @@ export function playSound(opts: {
 
             sound.gain.connect(audioContext.destination);
             sound.source.start();
-            console.log(sound);
           },
           function onFailure() {
             // console.error(new Error("Decoding the audio buffer failed"));

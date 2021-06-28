@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Group, MathUtils, Mesh, MeshStandardMaterial } from "three";
-import { GroupProps, useFrame } from "react-three-fiber";
+import { GroupProps, useFrame } from "@react-three/fiber";
 import Electron from "./Electron";
 import { useLevelStore } from "../../stores/levelStore";
 
@@ -27,9 +27,8 @@ export default function Atom({
   type?: "atom" | "hole" | "copy";
 }) {
   const group = useRef<Group>();
-  const { nodes, materials } = useGLTF("/atom.glb");
+  const { nodes, materials } = useGLTF("/atom.glb") as any;
   let theta = useRef(Math.random() * 100);
-
   useFrame(() => {
     const r = 5 * Math.sin(MathUtils.degToRad((theta.current += 0.1)));
     group.current && group.current.rotation.set(r, r, r);

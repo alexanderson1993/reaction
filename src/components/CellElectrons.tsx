@@ -8,7 +8,7 @@ import {
   Vector3,
 } from "three";
 import alphamap from "./Atom/alphamap.jpg";
-import { useFrame } from "react-three-fiber";
+import { useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import { CellItem, useLevelStore } from "../stores/levelStore";
 

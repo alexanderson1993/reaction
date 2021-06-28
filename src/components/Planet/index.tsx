@@ -1,5 +1,5 @@
 import React, { Suspense, useRef } from "react";
-import { useFrame, useLoader } from "react-three-fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { Color, Mesh, TextureLoader, Vector3 } from "three";
 import Clouds from "./Clouds";
 import Rings from "./Rings";
