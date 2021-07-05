@@ -9,10 +9,7 @@
   "keywords": [],
   "author": "Alex Anderson",
   "license": "ISC",
-  "dependencies": {
-    "cookie": "^0.4.1",
-    "faunadb": "^4.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/cookie": "^0.4.0",
     "@types/node": "^15.12.4"
