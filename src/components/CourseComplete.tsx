@@ -54,7 +54,7 @@ export default function CourseComplete({
     ) || 0;
   const { position } = useSpring({
     config: { tension: 150, friction: 50 },
-    position: state !== "summary" ? [0, 1.5, 10] : [0, 1.5, 0],
+    position: state !== "summary" ? [0, 1.5, 100] : [0, 1.5, 0],
   });
   return (
     <animated.group position={position as unknown as Vector3}>

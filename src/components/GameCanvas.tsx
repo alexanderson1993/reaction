@@ -9,8 +9,21 @@ import { Particles } from "./Particles";
 import Plane from "./Plane";
 import { useLoadingSpring } from "../helpers/useLoadingSpring";
 import { CellElectrons } from "./CellElectrons";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useMedia } from "../helpers/useMedia";
 
+function Camera() {
+  const { camera } = useThree();
+  const zoom = useMedia(
+    ["(min-width: 1500px)", "(min-width: 1000px)", "(min-width: 600px)"],
+    [6, 7, 8],
+    12
+  );
+  React.useEffect(() => {
+    camera.position.setZ(zoom);
+  }, [camera, zoom]);
+  return null;
+}
 export const GameCanvas = () => {
   const playing = ["loading", "playing"].includes(
     useLevelStore.getState().state
@@ -42,6 +55,7 @@ export const GameCanvas = () => {
   });
   return (
     <>
+      <Camera />
       {/* <pointLight color="white" intensity={1} position={[10, 10, 10]} /> */}
       <animated.group
         rotation={[-0.5, 0, 0]}
