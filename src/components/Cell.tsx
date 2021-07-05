@@ -46,7 +46,7 @@ const CellContents = ({ cell }: { cell: number }) => {
         role="content"
         description={`${rowLetter} ${colNumber}: ${wormholeColor} Wormhole`}
       >
-        <Wormhole cell={cell} object={object} />;
+        <Wormhole cell={cell} object={object} />
       </A11y>
     );
   }

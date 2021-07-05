@@ -5,6 +5,7 @@ import { useLoader } from "@react-three/fiber";
 import { Color, FontLoader, Mesh, Vector3 } from "three";
 import { useLevelStore } from "../stores/levelStore";
 import courseList from "./gameData.json";
+import { A11y } from "@react-three/a11y";
 
 function useCenterAlign(mesh: React.MutableRefObject<Mesh | undefined>) {
   useLayoutEffect(() => {
@@ -57,38 +58,43 @@ export default function CourseComplete({
   });
   return (
     <animated.group position={position as unknown as Vector3}>
-      <group scale={[scale * size, scale * size, scale]}>
-        <mesh ref={mesh}>
-          <textGeometry args={["Course Complete", config]} />
-          <meshStandardMaterial
-            color={0x00aaff}
-            emissive={new Color(0x0044ff)}
-          />
-        </mesh>
-        <group position={[0, -80, 0]}>
-          <mesh ref={scoreRef}>
-            <textGeometry
-              args={[
-                `Score: ${totalStrokes}
-Par: ${totalPar}`,
-                {
-                  font,
-                  size: 45,
-                  height: 10,
-                  curveSegments: 32,
-                  bevelEnabled: false,
-                },
-              ]}
-            />
+      <A11y
+        role="content"
+        description={`Course Complete. Score: ${totalStrokes}. Par: ${totalPar}`}
+      >
+        <group scale={[scale * size, scale * size, scale]}>
+          <mesh ref={mesh}>
+            <textGeometry args={["Course Complete", config]} />
             <meshStandardMaterial
-              color={0xffffff}
-              emissive={new Color(0xffffff)}
+              color={0x00aaff}
+              emissive={new Color(0x0044ff)}
             />
           </mesh>
-        </group>
+          <group position={[0, -80, 0]}>
+            <mesh ref={scoreRef}>
+              <textGeometry
+                args={[
+                  `Score: ${totalStrokes}
+Par: ${totalPar}`,
+                  {
+                    font,
+                    size: 45,
+                    height: 10,
+                    curveSegments: 32,
+                    bevelEnabled: false,
+                  },
+                ]}
+              />
+              <meshStandardMaterial
+                color={0xffffff}
+                emissive={new Color(0xffffff)}
+              />
+            </mesh>
+          </group>
 
-        <pointLight position={[1, 1, 100]} />
-      </group>
+          <pointLight position={[1, 1, 100]} />
+        </group>
+      </A11y>
     </animated.group>
   );
 }

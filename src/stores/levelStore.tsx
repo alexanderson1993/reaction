@@ -122,6 +122,7 @@ export const useLevelStore = create<{
 
       set({
         state: "summary",
+        currentLevel: null,
         particleLocations: Array.from({ length: 100 })
           .fill(0)
           .map((_, i) => null),

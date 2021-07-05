@@ -7,6 +7,7 @@ export function playSound(opts: {
   url: string;
   pitch?: boolean;
 }) {
+  console.log("playing sound");
   const volume = opts.muted ? 0 : opts.volume || 1;
   const asset = opts.url;
   if (!asset) return;

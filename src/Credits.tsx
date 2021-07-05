@@ -42,12 +42,12 @@ export const Credits = () => {
         >
           Start Game
         </button>
-        <button
+        {/* <button
           className="gradient-box mt-4"
           onClick={() => useLevelStore.getState()}
         >
           Purchase More Levels
-        </button>
+        </button> */}
       </Transition>
       <Transition
         className="course-list transform"
