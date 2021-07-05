@@ -8,7 +8,23 @@ import Arrow from "./Arrow";
 import Atom from "./Atom/NewAtom";
 import Mirror from "./Mirror";
 import Wormhole from "./Wormhole";
+import { A11y } from "@react-three/a11y";
 
+const rowLetters = "ABCDEFGH";
+const wormholeColors = [
+  "Red",
+  "Green",
+  "Blue",
+  "Yellow",
+  "Magenta",
+  "Cyan",
+  "White",
+  "Black",
+  "Orange",
+  "Lime",
+];
+const arrowDirections = { d: "Down", l: "Left", u: "Up", r: "Right" };
+const mirrorDirections = { m: "Flat", R: "Right", L: "Left" };
 const CellContents = ({ cell }: { cell: number }) => {
   const selector = React.useCallback(
     (state) => (state.currentLevel ? state.currentLevel[cell] : null),
@@ -16,9 +32,23 @@ const CellContents = ({ cell }: { cell: number }) => {
   );
   const object = useLevelStore(selector);
 
+  const x = cell % 8;
+  const y = Math.floor(cell / 8);
+  const rowLetter = rowLetters[y];
+  const colNumber = x + 1;
+
   if (!object) return null;
   if ("!@#$%^&*()".includes(object)) {
-    return <Wormhole cell={cell} object={object} />;
+    const wormholeColor = wormholeColors[")!@#$%^&*(".indexOf(object)];
+
+    return (
+      <A11y
+        role="content"
+        description={`${rowLetter} ${colNumber}: ${wormholeColor} Wormhole`}
+      >
+        <Wormhole cell={cell} object={object} />;
+      </A11y>
+    );
   }
   switch (object) {
     case "1":
@@ -27,21 +57,67 @@ const CellContents = ({ cell }: { cell: number }) => {
     case "4":
     case "p":
       return (
-        <Atom cell={cell} size={parseInt(object === "p" ? 0 : object, 10)} />
+        // @ts-ignore
+        <A11y
+          role={object === "p" ? "content" : "button"}
+          description={
+            object === "p"
+              ? ""
+              : `${rowLetter} ${colNumber}: Level ${object} Atom`
+          }
+          actionCall={() => {
+            useLevelStore.getState().incrementStrokes();
+            useLevelStore.getState().bumpAtom(cell);
+          }}
+        >
+          <Atom cell={cell} size={parseInt(object === "p" ? 0 : object, 10)} />
+        </A11y>
       );
     case "b":
-      return <Atom cell={cell} type="hole" />;
+      return (
+        <A11y
+          role="content"
+          description={`${rowLetter} ${colNumber}: Black Hole`}
+        >
+          <Atom cell={cell} type="hole" />
+        </A11y>
+      );
     case "e":
-      return <Atom cell={cell} type="copy" />;
+      return (
+        <A11y
+          role="content"
+          description={`${rowLetter} ${colNumber}: Duplicator`}
+        >
+          <Atom cell={cell} type="copy" />
+        </A11y>
+      );
     case "d":
     case "l":
     case "u":
     case "r":
-      return <Arrow cell={cell} />;
+      return (
+        <A11y
+          role="content"
+          description={`${rowLetter} ${colNumber}: ${
+            arrowDirections[object as keyof typeof arrowDirections]
+          } Arrow`}
+        >
+          <Arrow cell={cell} />
+        </A11y>
+      );
     case "m":
     case "R":
     case "L":
-      return <Mirror cell={cell} direction={object} />;
+      return (
+        <A11y
+          role="content"
+          description={`${rowLetter} ${colNumber}: ${
+            mirrorDirections[object as keyof typeof mirrorDirections]
+          } Mirror`}
+        >
+          <Mirror cell={cell} direction={object} />
+        </A11y>
+      );
     case "-":
       return null;
     default:

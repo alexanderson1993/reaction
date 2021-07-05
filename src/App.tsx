@@ -12,6 +12,7 @@ import { Score } from "./Score";
 import { Credits } from "./Credits";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import Dialog from "./Dialog";
+import { A11yAnnouncer, A11ySection } from "@react-three/a11y";
 
 function CorrectLighting() {
   const { gl } = useThree();
@@ -35,6 +36,7 @@ function App() {
       <Score />
 
       <GameButtons />
+      <A11yAnnouncer />
       <Canvas
         camera={{
           far: 10000,
@@ -46,7 +48,12 @@ function App() {
         <Suspense fallback={null}>
           <ambientLight intensity={0.1} />
           <CourseComplete />
-          <GameCanvas />
+          <A11ySection
+            label="Game board"
+            description="The game board is an 8 by 8 grid of objects, including atoms, mirrors, wormholes, and direction-changing arrows. Click on the atoms to charge them up and release their particles to create chain reactions. The level is complete when all of the atoms have been burst."
+          >
+            <GameCanvas />
+          </A11ySection>
           <StarsContainer />
           <Planet scale={[10, 10, 10]} position={[-25, -3, -20]} />
           <Star
