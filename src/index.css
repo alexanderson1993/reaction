@@ -3,6 +3,7 @@ body,
 #root {
   height: 100%;
   overflow: hidden;
+  position: fixed;
 }
 
 * {
@@ -290,7 +291,7 @@ button.link:focus {
   bottom: 5%;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
   width: 100%;
   transition: transform 1s ease;

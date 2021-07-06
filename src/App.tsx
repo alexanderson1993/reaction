@@ -38,6 +38,7 @@ function App() {
       <GameButtons />
       <A11yAnnouncer />
       <Canvas
+        dpr={window.devicePixelRatio}
         camera={{
           far: 10000,
           fov: 45,

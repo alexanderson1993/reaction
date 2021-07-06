@@ -15,5 +15,5 @@ export const StarsContainer = () => {
     const ry = Math.sin((z += rotationAmount / 10));
     starsRef.current && starsRef.current.rotation.set(0, ry, rz);
   });
-  return <Stars ref={starsRef} saturation={1} radius={250} />;
+  return <Stars ref={starsRef} saturation={1} radius={100} />;
 };

@@ -39,6 +39,7 @@ const Rings: React.FC<RingsProps> = ({ texture, wireframe }) => {
         opacity={0.8}
         wireframe={wireframe}
         attach="material"
+        depthWrite={false}
       />
     </mesh>
   );

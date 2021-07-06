@@ -28,6 +28,7 @@ export const GameCanvas = () => {
   const playing = ["loading", "playing"].includes(
     useLevelStore.getState().state
   );
+  const rotation = useMedia(["(min-width: 600px)"], [-0.5], 0);
   const [{ position, scale: groupScale }, set] = useSpring(() => ({
     config: { precision: 0.001 },
     position: playing ? [0, 0.5, 0] : [0, 0, -200],
@@ -58,7 +59,7 @@ export const GameCanvas = () => {
       <Camera />
       {/* <pointLight color="white" intensity={1} position={[10, 10, 10]} /> */}
       <animated.group
-        rotation={[-0.5, 0, 0]}
+        rotation={[rotation, 0, 0]}
         position={position as unknown as Vector3}
         scale={groupScale as unknown as Vector3}
       >
