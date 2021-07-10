@@ -67,6 +67,7 @@ export const useLevelStore = create<{
     particle: [number, number, "u" | "d" | "l" | "r"] | null
   ) => void;
   makeAlpha: (cell: number, exclude?: ("u" | "d" | "l" | "r")[]) => void;
+  tutorial: boolean;
 }>((set, get) => ({
   state: "credits",
   currentLevel: null,
@@ -76,6 +77,7 @@ export const useLevelStore = create<{
   levelIndex: null,
   courseIndex: null,
   strokes: null,
+  tutorial: false,
   reset: () =>
     set({
       state: "credits",
@@ -93,6 +95,7 @@ export const useLevelStore = create<{
       levelIndex: 0,
       strokes: {},
       currentLevel: gameData[courseIndex].levels[0].rows,
+      tutorial: true,
     }),
   loadLevel: async () => {
     await new Promise((res) => setTimeout(res, 250));
@@ -107,6 +110,7 @@ export const useLevelStore = create<{
       set((state) => {
         return {
           state: "playing",
+          tutorial: true,
           levelIndex: (state.levelIndex ?? -1) + 1,
           particleLocations: Array.from({ length: 100 })
             .fill(0)

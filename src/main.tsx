@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import "./tailwind.css";
 import App from "./App";
+import "@fontsource/teko";
 
 import { registerSW } from "virtual:pwa-register";
 

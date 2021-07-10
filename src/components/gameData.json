@@ -6,39 +6,57 @@
     "levels": [
       {
         "par": 10,
-        "rows": "-------------------------1-2-3-4---------1-2-3-4----------------"
+        "rows": "-------------------------1-2-3-4---------1-2-3-4----------------",
+        "tutorialTitle": "Welcome to Reaction!",
+        "tutorial": "The goal of the game is to burst all of the atoms in as few moves as possible. Tap on an atom to charge it up until it explodes, releasing particles to create a chain reaction."
       },
       {
         "par": 8,
-        "rows": "-------------------------d-2-3-l---------1-2-3-4----------------"
+        "rows": "-------------------------d-2-3-l---------1-2-3-4----------------",
+        "tutorialTitle": "Arrows",
+        "tutorial": "Arrows redirect particles in the direction that they point."
       },
       {
         "par": 8,
-        "rows": "-------------------------m-2-3-4---------1-2-3-m----------------"
+        "rows": "-------------------------m-2-3-4---------1-2-3-m----------------",
+        "tutorialTitle": "Flat Mirrors",
+        "tutorial": "Flat mirrors redirect particles back the way they came."
       },
       {
         "par": 8,
-        "rows": "-------------------------R-2-3-4---------1-2-3-R----------------"
+        "rows": "-------------------------R-2-3-4---------1-2-3-L----------------",
+        "tutorialTitle": "Angled Mirrors",
+        "tutorial": "Angled mirrors reflect particles based on the mirror's direction."
       },
       {
         "par": 13,
-        "rows": "-------------------------1-2-3-4-b-b-b-b-1-2-3-4----------------"
+        "rows": "-------------------------1-2-3-4-b-b-b-b-1-2-3-4----------------",
+        "tutorialTitle": "Black Holes",
+        "tutorial": "Black hole atoms absorb all particles, blocking your chain reactions."
       },
       {
         "par": 8,
-        "rows": "-------------------------1-2-3-e---------e-2-3-4----------------"
+        "rows": "-------------------------1-2-3-e---------e-2-3-4----------------",
+        "tutorialTitle": "Super Atoms",
+        "tutorial": "Super atoms are my favorite. They duplicate any particles that come in, sending new particles in every direction. You don't have to clear these atoms - they are just there to help you."
       },
       {
         "par": 8,
-        "rows": "-------------------------1-2-3-)---------)-2-3-4----------------"
+        "rows": "-------------------------1-2-3-)---------)-2-3-4----------------",
+        "tutorialTitle": "Wormholes",
+        "tutorial": "Wormholes bend space to teleport your particles to another location. Wormholes are keyed by color, and particles keep going the same direction that they were going when they went in."
       },
       {
         "par": 7,
-        "rows": "-----------------d-313-l---------3-424-3---------r-313-u--------"
+        "rows": "-----------------d-313-l---------3-424-3---------r-313-u--------",
+        "tutorialTitle": "Chain Reactions",
+        "tutorial": "Do everything you can to keep your score as low as possible. The order that you power up and burst the atoms will affect the chain reaction that you create."
       },
       {
         "par": 6,
-        "rows": "-----------------d-313-@---------3-424-3---------@-313-u--------"
+        "rows": "-----------------d-313-@---------3-424-3---------@-313-u--------",
+        "tutorialTitle": "Have Fun!",
+        "tutorial": "If you make a mistake and want to try again, click the \"Restart Level\" button. Click \"Go Back\" to return to the main menu. Good Luck!"
       }
     ]
   },
@@ -52,7 +70,7 @@
         "rows": "-------d---)-311-b-----e---4-4---------2-b-1-e---r---3-)---u----"
       },
       {
-        "par": 4,
+        "par": 5,
         "rows": "R-4--e--e--4---2-3-)-4---------ee1-m---------3-l---------)--22-m"
       },
       {

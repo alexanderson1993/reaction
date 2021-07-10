@@ -300,3 +300,44 @@ button.link:focus {
 .game-buttons.playing {
   transform: translateY(0);
 }
+/* [data-reach-dialog-overlay] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[data-reach-dialog-content] {
+  background: rgba(0, 0, 0, 0.7) !important;
+  border-radius: 2rem;
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  width: 90% !important;
+  max-width: 960px;
+  margin-top: 0 !important;
+  box-sizing: border-box;
+  box-shadow: 0 2.3px 1.9px rgba(0, 0, 0, 0.052),
+    0 5.4px 4.3px rgba(0, 0, 0, 0.075), 0 9.7px 7.7px rgba(0, 0, 0, 0.092),
+    0 16.1px 12.8px rgba(0, 0, 0, 0.108), 0 26.5px 21.2px rgba(0, 0, 0, 0.125),
+    0 46.2px 37px rgba(0, 0, 0, 0.148), 0 100px 80px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  transform: scale(0);
+  pointer-events: none;
+}
+[data-reach-dialog-content].visible {
+  transform: scale(1);
+  pointer-events: all;
+}
+[data-reach-alert-dialog-label] {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e97639;
+}
+[data-reach-alert-dialog-description] {
+} */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
