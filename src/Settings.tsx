@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLevelStore } from "./stores/levelStore";
 import { Transition } from "@headlessui/react";
 
@@ -7,7 +7,7 @@ export function Settings() {
 
   const musicVolume = useLevelStore((store) => store.musicVolume);
   const soundVolume = useLevelStore((store) => store.soundVolume);
-
+  const [price, setPrice] = useState("5");
   return (
     <Transition
       className="credits transform z-10"
@@ -52,6 +52,41 @@ export function Settings() {
           value={soundVolume}
         />
       </label>
+      <hr className="my-4 w-16" />
+      <p>You can purchase additional levels at any price (min $1).</p>
+      <form
+        method="POST"
+        // action="/.netlify/functions/checkout"
+        action="http://localhost:8888/.netlify/functions/checkout"
+        className="flex flex-col"
+        onSubmit={(e) => {
+          if (!price) e.preventDefault();
+        }}
+      >
+        <label className="flex flex-col">
+          Name your price:
+          <div className="w-[200px] bg-gray-900 bg-opacity-70 px-4 py-1 border-2 border-gray-400 flex align-center ">
+            <span className="pr-1">$</span>
+            <input
+              className="w-full bg-transparent"
+              type="number"
+              name="price"
+              pattern="[0-9]"
+              min={1}
+              value={price}
+              onChange={(e) => {
+                let value = parseInt(e.currentTarget.value, 10);
+                if (e.currentTarget.value === "") return setPrice("");
+                if (isNaN(value) || value <= 0) value = 5;
+                setPrice(value.toString());
+              }}
+            />
+          </div>
+        </label>
+        <button className="gradient-box mt-4" type="submit" disabled={!price}>
+          Purchase
+        </button>
+      </form>
       <button
         className="gradient-box mt-4"
         onClick={() => useLevelStore.getState().reset()}

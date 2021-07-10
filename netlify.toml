@@ -1,0 +1,7 @@
+[functions]
+  directory = "functions/"
+
+[dev]
+  command = "yarn dev"
+  targetPort = 3000
+  framework = "#custom"
