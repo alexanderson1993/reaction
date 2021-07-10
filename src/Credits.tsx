@@ -14,8 +14,6 @@ export const Credits = () => {
       courseListRef.current?.focus();
     }
   }, [state]);
-  console.log(state);
-  console.log(state !== "courses" ? "true" : "false");
   return (
     <div className="html-container">
       {!rendered ? (

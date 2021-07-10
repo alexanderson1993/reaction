@@ -1,4 +1,3 @@
-import * as THREE from "three";
 import React, { useRef } from "react";
 // A THREE.js React renderer, see: https://github.com/drcmda/@react-three/fiber
 import { useFrame } from "@react-three/fiber";
@@ -45,9 +44,7 @@ const particles = [
 ];
 const tempObject = new Object3D();
 const tempColor = new Color();
-const bump = (cell: number) => {
-  console.log("bump");
-};
+const bump = (cell: number) => {};
 function Atom({
   cell,
   size = 1,
