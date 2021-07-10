@@ -38,7 +38,7 @@ export const GameCanvas = () => {
 
   React.useEffect(() => {
     const unsub = useLevelStore.subscribe(
-      (state) => {
+      (state: string) => {
         if (["playing", "loading", "levelSummary"].includes(state))
           set({ position: [0, 0.5, 0], scale: [1, 1, 1] });
         else {

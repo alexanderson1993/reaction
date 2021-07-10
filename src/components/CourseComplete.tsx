@@ -48,10 +48,9 @@ export default function CourseComplete({
     0
   );
   const totalPar =
-    courseList[courseIndex ?? -1]?.levels.reduce(
-      (acc, next) => acc + next.par,
-      0
-    ) || 0;
+    courseList[courseIndex ?? -1]?.levels
+      .map((level) => level.par)
+      .reduce((acc: number, next) => acc + next, 0) || 0;
   const { position } = useSpring({
     config: { tension: 150, friction: 50 },
     position: state !== "summary" ? [0, 1.5, 100] : [0, 1.5, 0],

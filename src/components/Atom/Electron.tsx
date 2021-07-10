@@ -1,20 +1,9 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { animated, useSpring } from "@react-spring/three";
-import {
-  Color,
-  Curve,
-  Group,
-  Object3D,
-  PointLight,
-  PointLightHelper,
-  TubeBufferGeometry,
-  TubeGeometry,
-  Vector,
-  Vector3,
-} from "three";
+import { Color, Curve, Group, TubeBufferGeometry, Vector3 } from "three";
 import alphamap from "./alphamap.jpg";
-import { useHelper, useTexture } from "@react-three/drei";
+import { useTexture } from "@react-three/drei";
 class CustomCurve extends Curve<Vector3> {
   getPoint = function (t: number) {
     var tx = (t - 0.5) * 2;
