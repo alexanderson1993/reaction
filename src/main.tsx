@@ -4,6 +4,8 @@ import "./index.css";
 import "./tailwind.css";
 import App from "./App";
 import "@fontsource/teko";
+import "@fontsource/teko/300.css";
+import "@fontsource/teko/600.css";
 
 import { registerSW } from "virtual:pwa-register";
 

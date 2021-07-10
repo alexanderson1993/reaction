@@ -18,7 +18,7 @@ body,
   margin: 0;
   padding: 0;
   color: #eee;
-  font-family: "Teko", sans-serif;
+  font-family: "Teko", sans-serif !important;
   font-weight: 300;
   font-size: larger;
   -webkit-touch-callout: none;
@@ -340,4 +340,12 @@ button.link:focus {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  gap: 1rem;
+}
+label {
+  pointer-events: all;
+}
+input[type="range"] {
+  display: block;
+  z-index: 10;
 }

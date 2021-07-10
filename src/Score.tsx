@@ -13,7 +13,7 @@ export function Score() {
   return (
     <Transition
       className="score transform"
-      show={state === "playing" || state === "loading"}
+      show={["playing", "loading", "levelSummary"].includes(state)}
       enter="transition-transform duration-500"
       leave="transition-transform duration-500"
       enterFrom="scale-0"

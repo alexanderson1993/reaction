@@ -39,6 +39,11 @@ function oppositeDirection(
   throw new Error("AHHH!");
 }
 
+function getLocalStorageNum(key: string) {
+  const value = parseFloat(localStorage.getItem(key) ?? "");
+  if (isNaN(value)) return 1;
+  return value;
+}
 export const useLevelStore = create<{
   state:
     | "rendering"
@@ -46,7 +51,9 @@ export const useLevelStore = create<{
     | "courses"
     | "loading"
     | "playing"
-    | "summary";
+    | "summary"
+    | "levelSummary"
+    | "settings";
   setRendered: () => void;
   showCourses: () => void;
   loadCourse: (courseIndex: number) => void;
@@ -62,12 +69,16 @@ export const useLevelStore = create<{
   update: () => void;
   reset: () => void;
   restartLevel: () => void;
+  showSettings: () => void;
+  goToLevelSummary: () => void;
   setParticle: (
     index: number,
     particle: [number, number, "u" | "d" | "l" | "r"] | null
   ) => void;
   makeAlpha: (cell: number, exclude?: ("u" | "d" | "l" | "r")[]) => void;
   tutorial: boolean;
+  musicVolume: number;
+  soundVolume: number;
 }>((set, get) => ({
   state: "credits",
   currentLevel: null,
@@ -78,6 +89,8 @@ export const useLevelStore = create<{
   courseIndex: null,
   strokes: null,
   tutorial: false,
+  musicVolume: getLocalStorageNum("music_volume"),
+  soundVolume: getLocalStorageNum("sound_volume"),
   reset: () =>
     set({
       state: "credits",
@@ -104,6 +117,9 @@ export const useLevelStore = create<{
   nextLevel: async () => {
     set({
       state: "loading",
+      particleLocations: Array.from({ length: 100 })
+        .fill(0)
+        .map((_, i) => null),
     });
     if (gameData[get().courseIndex ?? 0].levels[(get().levelIndex ?? -1) + 1]) {
       await new Promise((res) => setTimeout(res, 500));
@@ -112,9 +128,7 @@ export const useLevelStore = create<{
           state: "playing",
           tutorial: true,
           levelIndex: (state.levelIndex ?? -1) + 1,
-          particleLocations: Array.from({ length: 100 })
-            .fill(0)
-            .map((_, i) => null),
+
           currentLevel:
             gameData[state.courseIndex ?? 0].levels[
               (state.levelIndex ?? -1) + 1
@@ -147,6 +161,9 @@ export const useLevelStore = create<{
         gameData[state.courseIndex ?? 0].levels[state.levelIndex ?? -1]?.rows,
       strokes: { ...state.strokes, [state.levelIndex ?? -1]: 0 },
     }));
+  },
+  showSettings: () => {
+    set({ state: "settings" });
   },
   incrementStrokes: () => {
     set((state) => {
@@ -196,6 +213,16 @@ export const useLevelStore = create<{
       let particleLocations = state.particleLocations.concat();
       particleLocations[index] = particle;
       return { particleLocations };
+    });
+  },
+  goToLevelSummary: async () => {
+    await new Promise((res) => setTimeout(res, 500));
+
+    set({
+      state: "levelSummary",
+      particleLocations: Array.from({ length: 100 })
+        .fill(0)
+        .map((_, i) => null),
     });
   },
   update: () => {
@@ -340,7 +367,7 @@ export const useLevelStore = create<{
       );
       if (!inProgress && get().state === "playing") {
         // Level complete
-        get().nextLevel();
+        get().goToLevelSummary();
       }
     }
   },

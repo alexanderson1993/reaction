@@ -25,7 +25,7 @@ function Camera() {
   return null;
 }
 export const GameCanvas = () => {
-  const playing = ["loading", "playing"].includes(
+  const playing = ["loading", "playing", "levelSummary"].includes(
     useLevelStore.getState().state
   );
   const rotation = useMedia(["(min-width: 600px)"], [-0.5], 0);
@@ -39,7 +39,7 @@ export const GameCanvas = () => {
   React.useEffect(() => {
     const unsub = useLevelStore.subscribe(
       (state) => {
-        if (state === "playing" || state === "loading")
+        if (["playing", "loading", "levelSummary"].includes(state))
           set({ position: [0, 0.5, 0], scale: [1, 1, 1] });
         else {
           set({ position: [0, 0, -200], scale: [0.00001, 0.00001, 0.00001] });
