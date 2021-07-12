@@ -5,6 +5,7 @@ import stripeInit from "stripe";
 const stripe = stripeInit(process.env.STRIPE_SECRET_KEY || "");
 
 const handler: Handler = async (event, context) => {
+  console.log(event, event.httpMethod, event.body);
   if (event.httpMethod === "POST") {
     console.log(event.body);
     // const price = JSON.parse(event.body || "{}").price || 500;
