@@ -56,8 +56,7 @@ export function Settings() {
       <p>You can purchase additional levels at any price (min $1).</p>
       <form
         method="POST"
-        // action="/.netlify/functions/checkout"
-        action="http://localhost:8888/.netlify/functions/checkout"
+        action="/.netlify/functions/checkout"
         className="flex flex-col"
         onSubmit={(e) => {
           if (!price) e.preventDefault();
