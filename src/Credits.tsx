@@ -82,7 +82,6 @@ export const Credits = () => {
               <p>{description}</p>
             </div>
           ))}
-        <p>More levels coming soon!</p>
       </Transition>
     </div>
   );
