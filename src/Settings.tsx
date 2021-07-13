@@ -14,7 +14,7 @@ export function Settings() {
   const hasGameData = localStorage.getItem("game_data");
   return (
     <Transition
-      className="credits transform z-10"
+      className="transform z-10 overflow-y-auto h-full py-8 px-4 course-list"
       show={state === "settings"}
       enter="transition-transform duration-500"
       leave="transition-transform duration-500"
@@ -23,7 +23,7 @@ export function Settings() {
       leaveFrom="translate-x-0"
       leaveTo="translate-x-[-150%]"
     >
-      <h1 className="text-5xl">Settings</h1>
+      <h1 className="text-6xl">Settings</h1>
       <label className="mt-4">
         Music Volume
         <input

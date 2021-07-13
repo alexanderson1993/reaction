@@ -19,7 +19,7 @@ export function Tutorial() {
     <Transition show={showDialog} as={Fragment}>
       <Dialog
         onClose={close}
-        className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center"
+        className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center px-2"
       >
         <Transition.Child
           as={Fragment}

@@ -76,7 +76,7 @@ export const Credits = () => {
           .map(({ name, description, difficulty, courseIndex }, index) => (
             <div className="course-list-item" key={`course-${index}`}>
               <button className="link" onClick={() => startGame(courseIndex)}>
-                <h1>{name}</h1>
+                <h1 className="text-3xl">{name}</h1>
               </button>
               <p>Difficulty: {Math.round(difficulty * 100)}%</p>
               <p>{description}</p>

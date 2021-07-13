@@ -15,7 +15,7 @@ export function GameButtons() {
         <Dialog
           initialFocus={restartButton}
           onClose={close}
-          className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center"
+          className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center px-2 w-full"
         >
           <Transition.Child
             as={Fragment}
@@ -46,7 +46,7 @@ export function GameButtons() {
                 You will lose your progress on this course.
               </Dialog.Description>
 
-              <div className="modal-buttons">
+              <div className="gap-4 flex-wrap items-center">
                 <button className="gradient-box" onClick={close}>
                   Cancel
                 </button>
