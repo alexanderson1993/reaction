@@ -121,7 +121,7 @@ export const useLevelStore = create<{
       courseIndex,
       levelIndex: 0,
       strokes: {},
-      currentLevel: gameData[courseIndex].levels[0].rows,
+      currentLevel: get().gameData[courseIndex].levels[0].rows,
       tutorial: true,
     }),
   loadLevel: async () => {
@@ -135,7 +135,11 @@ export const useLevelStore = create<{
         .fill(0)
         .map((_, i) => null),
     });
-    if (gameData[get().courseIndex ?? 0].levels[(get().levelIndex ?? -1) + 1]) {
+    if (
+      get().gameData[get().courseIndex ?? 0].levels[
+        (get().levelIndex ?? -1) + 1
+      ]
+    ) {
       await new Promise((res) => setTimeout(res, 500));
       set((state) => {
         return {
@@ -144,7 +148,7 @@ export const useLevelStore = create<{
           levelIndex: (state.levelIndex ?? -1) + 1,
 
           currentLevel:
-            gameData[state.courseIndex ?? 0].levels[
+            get().gameData[state.courseIndex ?? 0].levels[
               (state.levelIndex ?? -1) + 1
             ]?.rows,
         };
@@ -172,7 +176,8 @@ export const useLevelStore = create<{
         .fill(0)
         .map((_, i) => null),
       currentLevel:
-        gameData[state.courseIndex ?? 0].levels[state.levelIndex ?? -1]?.rows,
+        get().gameData[state.courseIndex ?? 0].levels[state.levelIndex ?? -1]
+          ?.rows,
       strokes: { ...state.strokes, [state.levelIndex ?? -1]: 0 },
     }));
   },
