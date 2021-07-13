@@ -1,0 +1,708 @@
+[
+  {
+    "name": "An Appetizing Tutorial",
+    "difficulty": 0.05,
+    "description": "This starter course shows you how to play.",
+    "levels": [
+      {
+        "par": 10,
+        "rows": "-------------------------1-2-3-4---------1-2-3-4----------------",
+        "tutorialTitle": "Welcome to Reaction!",
+        "tutorial": "The goal of the game is to burst all of the atoms in as few moves as possible. Tap on an atom to charge it up until it explodes, releasing particles to create a chain reaction."
+      },
+      {
+        "par": 8,
+        "rows": "-------------------------d-2-3-l---------1-2-3-4----------------",
+        "tutorialTitle": "Arrows",
+        "tutorial": "Arrows redirect particles in the direction that they point."
+      },
+      {
+        "par": 8,
+        "rows": "-------------------------m-2-3-4---------1-2-3-m----------------",
+        "tutorialTitle": "Flat Mirrors",
+        "tutorial": "Flat mirrors redirect particles back the way they came."
+      },
+      {
+        "par": 8,
+        "rows": "-------------------------R-2-3-4---------1-2-3-L----------------",
+        "tutorialTitle": "Angled Mirrors",
+        "tutorial": "Angled mirrors reflect particles based on the mirror's direction."
+      },
+      {
+        "par": 13,
+        "rows": "-------------------------1-2-3-4-b-b-b-b-1-2-3-4----------------",
+        "tutorialTitle": "Black Holes",
+        "tutorial": "Black hole atoms absorb all particles, blocking your chain reactions."
+      },
+      {
+        "par": 8,
+        "rows": "-------------------------1-2-3-e---------e-2-3-4----------------",
+        "tutorialTitle": "Super Atoms",
+        "tutorial": "Super atoms are my favorite. They duplicate any particles that come in, sending new particles in every direction. You don't have to clear these atoms - they are just there to help you."
+      },
+      {
+        "par": 8,
+        "rows": "-------------------------1-2-3-)---------)-2-3-4----------------",
+        "tutorialTitle": "Wormholes",
+        "tutorial": "Wormholes bend space to teleport your particles to another location. Wormholes are keyed by color, and particles keep going the same direction that they were going when they went in."
+      },
+      {
+        "par": 7,
+        "rows": "-----------------d-313-l---------3-424-3---------r-313-u--------",
+        "tutorialTitle": "Chain Reactions",
+        "tutorial": "Do everything you can to keep your score as low as possible. The order that you power up and burst the atoms will affect the chain reaction that you create."
+      },
+      {
+        "par": 6,
+        "rows": "-----------------d-313-@---------3-424-3---------@-313-u--------",
+        "tutorialTitle": "Have Fun!",
+        "tutorial": "If you make a mistake and want to try again, click the \"Restart Level\" button. Click \"Go Back\" to return to the main menu. Good Luck!"
+      }
+    ]
+  },
+  {
+    "name": "The Dwarf Planet",
+    "difficulty": 0.1,
+    "description": "Whet your appetite with this beginner's course. It's like Pluto - not quite a full meal but big enough to fill you up.",
+    "levels": [
+      {
+        "par": 6,
+        "rows": "-------d---)-311-b-----e---4-4---------2-b-1-e---r---3-)---u----"
+      },
+      {
+        "par": 5,
+        "rows": "R-4--e--e--4---2-3-)-4---------ee1-m---------3-l---------)--22-m"
+      },
+      {
+        "par": 4,
+        "rows": "---------------e--4-e--ld--l3-lm4-b---2--r----4-L4----2Lm--3--2l"
+      },
+      {
+        "par": 5,
+        "rows": "d---4-L----------2--e--)r--4--3---------------3-)--3----------R-"
+      },
+      {
+        "par": 8,
+        "rows": "43----342)----!2--------L--33--RR--33--L--------2!----)243----34"
+      },
+      {
+        "par": 6,
+        "rows": "-------3m3-2---3--3e-3-2---------2-R-------------3-3---l--------"
+      },
+      {
+        "par": 5,
+        "rows": "-----------R2-l----------3-13-4m-3-33------2-------m------------"
+      },
+      {
+        "par": 4,
+        "rows": "---------R1312--3e31444m-L1312----33------44--------------------"
+      },
+      {
+        "par": 7,
+        "rows": "----------d23l----3223----d22u------------3RL3------------------"
+      }
+    ]
+  },
+  {
+    "name": "Superconductor",
+    "difficulty": 0.6,
+    "description": "Combining complex science and traffic control in one maddening course!",
+    "levels": [
+      {
+        "par": 6,
+        "rows": "--d-4-3-33l-4-3---u3drul44r333----333u44rdlu3l---3-4-d33-3-4-r--"
+      },
+      {
+        "par": 7,
+        "rows": "----d1l-----111d--)111u1-3e32111-2322111--L32)-1----1-------1---"
+      },
+      {
+        "par": 7,
+        "rows": "-r-r-d--r1r--3d--u-2-d--d3-3-2d--u-3-d--2----12dr-11112l---r-12-"
+      },
+      {
+        "par": 9,
+        "rows": "3------d--3-d----b)-1-----2b------3b----u-4-)b----3-2--l--------"
+      },
+      {
+        "par": 6,
+        "rows": "---m----d2-3d-3ld--e---ud12131-m-11111-l---3----2--L--3ur--2---u"
+      },
+      {
+        "par": 12,
+        "rows": "rd----1-2222--el2332r--d2222---l----2222-e--2332-2-d2222u--l---l"
+      },
+      {
+        "par": 12,
+        "rows": "--d3-l---d3---3lr-)b-----d2b----3-1b-3-----b-)32-3u-----u3---3-u"
+      },
+      {
+        "par": 13,
+        "rows": "-d--1--l4-3--2---2-21-4u4-3eb2-2-2121-4u4-31-2-2-2-2--4ur---u-r2"
+      },
+      {
+        "par": 9,
+        "rows": "3d----d-r3-33-3d---bb----r-11-l--r-11-l----bb----3-33-3--u----ul"
+      }
+    ]
+  },
+  {
+    "name": "Rogue Asteroid",
+    "difficulty": 0.7,
+    "description": "Not a wimpy one, either. Scary, considering there's a whole belt of them just a planet away!",
+    "levels": [
+      {
+        "par": 4,
+        "rows": "m!-123ll)-m3-4R1u434d32323R33d-21u-43lu34-l3L-b2u!-323-)L-4-Rbb-"
+      },
+      {
+        "par": 4,
+        "rows": "-d2--l-lRl4-bm44433b1bb323b1e)b4243b1bb44-33b--4L-3244L4)-2-3-l-"
+      },
+      {
+        "par": 7,
+        "rows": "-3---3-d--------4)---3-d----3----2----2d--2-)--3---------u--3-3l"
+      },
+      {
+        "par": 7,
+        "rows": "bb)bbbbbb312334@b3e-b-4b@2-32!1bb3b43e2bb4!-b-3bb323134bbbbbbb)b"
+      },
+      {
+        "par": 7,
+        "rows": "3333m3)3b3b333333333b3m3b3L333333333R3)31313333333331313e3133333"
+      },
+      {
+        "par": 4,
+        "rows": "b@1434)b3L2334R!4-b33b2434-mm33R4--mm34L34b--b43)R434-L@b!-3-4)b"
+      },
+      {
+        "par": 9,
+        "rows": "23----32-3----3---3223----2e-2----2-e2----3223-----------ullrru-"
+      },
+      {
+        "par": 8,
+        "rows": "3--rd------3d---)3-u---3r3-3-l---3------3)4e3----r---2-u--------"
+      },
+      {
+        "par": 13,
+        "rows": "-3-d-------4-----!111-l--b24)3u-4)111---!m-u3-u-----L-----------"
+      }
+    ]
+  },
+  {
+    "name": "Schrodinger's Goldfish",
+    "difficulty": 0.8,
+    "description": "A perplexing series of ever more difficult puzzles. Watch out out for singular irregularities!",
+    "levels": [
+      {
+        "par": 10,
+        "rows": "-r-d--)--3-2-3d---b-b---L1-eb11---b-b-----b2-3u-u3--b----r-u-)--"
+      },
+      {
+        "par": 4,
+        "rows": "---------m-4-d--d--3--m--m-33d--------m--m2--l--r-23------------"
+      },
+      {
+        "par": 13,
+        "rows": "---m----r3b1-----3b1-dl-!3b2-!----b2-3---r-u-3--r3232u---r2r22u-"
+      },
+      {
+        "par": 7,
+        "rows": "4--b--b--31e3m2d-L--)--lr2----14b)--3-el23r-1R--4--e42b2bem-2r-u"
+      },
+      {
+        "par": 6,
+        "rows": "---------r3321----1233l-r32bb23lr32bb23l-u3233u--u3323l---------"
+      },
+      {
+        "par": 9,
+        "rows": "--------b----m3----3---l--m---3---------d-3-m2-ur-----u-b-3--um2"
+      },
+      {
+        "par": 4,
+        "rows": "--------d1-ll------23l--3-2L23--2-ReL----u333u-------------r-u--"
+      },
+      {
+        "par": 10,
+        "rows": "---------3-ddd---u1111----u44u-2--u44d3u-4-bb3u--u---l----------"
+      },
+      {
+        "par": 6,
+        "rows": "-----mrd32-l--e----3-4---1--1-2lb-eL-4-----------u-3-lm---------"
+      }
+    ]
+  },
+  {
+    "name": "Vector Space",
+    "difficulty": 0.9,
+    "description": "Or if you prefer, after having played through all the other levels, VEXING Space!",
+    "levels": [
+      {
+        "par": 15,
+        "rows": ")12!33(33*233@32&23#331^1!323$2434%1(2#34^32)3123@2*34$3&213%423"
+      },
+      {
+        "par": 6,
+        "rows": "b3--d---b-------)3--2-3b3-b---2b3-b33-mbb3--)b--bb------b-------"
+      },
+      {
+        "par": 9,
+        "rows": "bb4b4b4bb41414144141414bb4141414414b414bb41414144141414b-4b4b4b-"
+      },
+      {
+        "par": 9,
+        "rows": "bb1331bbbR23L2m2R32322332m2L313m2223233121212m2223R322L3m213212m"
+      },
+      {
+        "par": 10,
+        "rows": "-4------r)----3-2d-------r1111l----------4------2l3--)u-u----ru-"
+      },
+      {
+        "par": 8,
+        "rows": "d323---dd414---d----rd------32--r---R3-------2---bbbbb--u23232-l"
+      },
+      {
+        "par": 4,
+        "rows": "4)be---L14b1b3-412b4b3-4u4b4b3-44lb4b2-44db4b11R4lb4bL-44Rb)b4-4"
+      },
+      {
+        "par": 9,
+        "rows": "----------3--d-----d3---4-u2u3--4-d2d3-----u3-----3--u----------"
+      },
+      {
+        "par": 9,
+        "rows": "-1--b-1-1e3--3e1-)-------2-1!13--231)13--32---3-1e!-1-e1-1-b--1-"
+      }
+    ]
+  },
+  {
+    "name": "Complex Wave ",
+    "difficulty": 1,
+    "description": "This one is so complex you may end up waving yourself. Err... waving GOODBYE, that is! Yeah!",
+    "levels": [
+      {
+        "par": 5,
+        "rows": ")344-1-34332-13-d224-1----d--1-l--r--u-3r32----u-2-423-4-3-2221)"
+      },
+      {
+        "par": 12,
+        "rows": "bbbbbbbbbr3r232db2bubbb1br141db3b3b3d4l2b2l1l-l3bubub1b1bbb-b3bu"
+      },
+      {
+        "par": 4,
+        "rows": "bb334-bbbR422dLb---42--34u4LR-31---RL3l4-2-3232-bL-423lbbb-122bb"
+      },
+      {
+        "par": 5,
+        "rows": "eeeeeeee-1111111-rdlrdrd--1321114-4111-1--3--1113--4--3131132121"
+      },
+      {
+        "par": 4,
+        "rows": "R--3-43L-b-42-3-3-R-1L)3)2134-b1131b324-1-L-3R-3-uR3--l2L-3-e2-R"
+      },
+      {
+        "par": 5,
+        "rows": "b4341-43db-2-1#22-b-433421-L3-u4-22-L4e1322-3b33-#-443b223142-4b"
+      },
+      {
+        "par": 5,
+        "rows": "rd-b32m-e$db-2-4rulb3223bbbR-324-343--23142224322312-$33L2343R-1"
+      },
+      {
+        "par": 5,
+        "rows": "R11e-RL-132--1144R2eb^244-1--u2-2----3131-2eb412d^--b414Lu--b3-R"
+      },
+      {
+        "par": 2,
+        "rows": "4-)bb-Rl3-b--b@-!b-!--b#b#---^Lbb$-r--Rb$bu-l-b@--b--b-43l^bb)33"
+      }
+    ]
+  },
+  {
+    "name": "CERN Cocktail Party",
+    "difficulty": 1.2,
+    "description": "So I says, \"Super collider? I just MET her!\"",
+    "levels": [
+      {
+        "par": 7,
+        "rows": "3334333e33333333e3bbbbbb3334333333334333bbbbbb3e33333333e3334333"
+      },
+      {
+        "par": 13,
+        "rows": "b413-33l4d-4-2r3232414-2331RL233-14LR-331-l41324-b432-d-1-4--3-m"
+      },
+      {
+        "par": 10,
+        "rows": "R---2-4Lr-2232L3mmmmmm1Rm)113m1Lbe111m2-mbmmmm3-R--333R-L-2221-)"
+      },
+      {
+        "par": 11,
+        "rows": "eLbbbbRed-LbbR-dd2-LR-1dd3-44-4l-bbbbbbud3---3-udee-e-e212232322"
+      },
+      {
+        "par": 8,
+        "rows": "2----b-)e-1Lbe-1---------be--e-----)----e-eb-1-eb-b---------be-e"
+      },
+      {
+        "par": 6,
+        "rows": "333333333r3--d-33u--l-233--4---33L-R-3-33------33r-3uru333333333"
+      },
+      {
+        "par": 7,
+        "rows": "rbll3ll)4dd2d4uur2rudllururudr3u2lluddlurr3udrdurruud2rd)rru2urr"
+      },
+      {
+        "par": 15,
+        "rows": "!11ee11)bbb--bbb----------------44444444-bbbbbb-2)3223!2L------R"
+      },
+      {
+        "par": 13,
+        "rows": "--e--d----3---3-------3-bbbb----333b----3)3br)-l333b3-31bbbb-u-e"
+      }
+    ]
+  },
+  {
+    "name": "Up and Atom",
+    "difficulty": 0.2,
+    "description": "Looking for a brainier course? (Did you know that \"brainier\" is a real word?!) Anyway, try your hand at these levels!",
+    "levels": [
+      {
+        "par": 4,
+        "rows": "---------3---L----r---d---4--4---2u--l-------------2--3--u-3--l-"
+      },
+      {
+        "par": 4,
+        "rows": "3-----L--@-2---L-------------------!-----2----@---!----4L-4-e--R"
+      },
+      {
+        "par": 4,
+        "rows": "mbbbbbbmm23d--Lmm11R---mm-3-33ummRu-4-)mm)--dl3mm--433ummbbbbbbm"
+      },
+      {
+        "par": 5,
+        "rows": "R--4--L---------3-@-4-!---r------!---------3-@-4---------3-----R"
+      },
+      {
+        "par": 5,
+        "rows": "-mL-4-3mb-4-4e--)2-3-42ld!3-3-m-r2-3-3-!-)-43-4-bm2e332-b-3-m--b"
+      },
+      {
+        "par": 9,
+        "rows": "b3b-b--b-u23l3-42-L-3--bb--------------bb-3-24-4-3-R----br3b-b-b"
+      },
+      {
+        "par": 6,
+        "rows": "--------R---1-----------1---3---L-2-3-L-----------3-R-33--r-e-u2"
+      },
+      {
+        "par": 7,
+        "rows": "br---db3b-bbbr-ubulbbbbbbb-bbbbbbbubbbbb3---4-3-3-3-R---r-2---3-"
+      },
+      {
+        "par": 6,
+        "rows": "r-L--R-l-)2bb2!--3-33-3-32----233--33--33------3!--22--)--------"
+      }
+    ]
+  },
+  {
+    "name": "The Quantum Pub",
+    "difficulty": 0.25,
+    "description": "A neutron walks into a bar and asks, \"How much for a drink?\" The bartender says, \"For you, no charge!\"",
+    "levels": [
+      {
+        "par": 5,
+        "rows": "434----d3-----d-334--d--3-------4--4---4r---3--3-r---3-3--r---34"
+      },
+      {
+        "par": 4,
+        "rows": "4----e-4---------e2--32------------------23--2e---------4-e----4"
+      },
+      {
+        "par": 5,
+        "rows": ")-R--L-33---4---L------4-4L---L-R----R--e--3----4--4--R---u-4--)"
+      },
+      {
+        "par": 4,
+        "rows": ")34343433#-----44-@----33--!---44---#--33----)-44-----!33434343@"
+      },
+      {
+        "par": 6,
+        "rows": "r4--4-2d-r-dl---3-b--b3--3b-3b-44-b4-b42-4b--b-4u323u-4--u4-4--l"
+      },
+      {
+        "par": 4,
+        "rows": "3-3e3--4-1-3-3e-3e1-3-3--3-1e3-44-3-1-3e-3e3-1-3--3-3e1-e--4-3-2"
+      },
+      {
+        "par": 5,
+        "rows": "4-4--3-3-3----4-4-4--3-3---ee------ee---3-3--4-4-4----3-3-3--4-4"
+      },
+      {
+        "par": 6,
+        "rows": "233eb------be322243eb------ee342233eb------be322243eb------be342"
+      },
+      {
+        "par": 5,
+        "rows": "4L)----3-3L----334eLm-mm-3b-L---24e-4--3-3b-3-L--4e-3--L23--3)--"
+      }
+    ]
+  },
+  {
+    "name": "Waveform Collapse",
+    "difficulty": 0.3,
+    "description": "Go ahead and measure these puzzles all you want. They won't get any easier!",
+    "levels": [
+      {
+        "par": 3,
+        "rows": "--4---L-r3---------------@----43--------L--4-@-3----------3--4-R"
+      },
+      {
+        "par": 4,
+        "rows": "R-e!-e-L------@4--3--3-L--------4-@----------3-R-2-!--2-L--1---R"
+      },
+      {
+        "par": 5,
+        "rows": "--3--!----------R----3-L----------------u4-LR2------------!33b-2"
+      },
+      {
+        "par": 6,
+        "rows": "#------3---------4-!--@---------!--14--#---------3----R----@----"
+      },
+      {
+        "par": 3,
+        "rows": "---------3---L----r---d---4--4---2u--l-------------2--3--u-3--l-"
+      },
+      {
+        "par": 6,
+        "rows": "bbebbebbd4--4--mb-4----eb3-3--dbr---3--ebe---4-ber----3bbbmbmbbb"
+      },
+      {
+        "par": 5,
+        "rows": "4-4-L@--b-b-----3--2-3-!---e----!---e--------3-4--3--b-b--@L-4-4"
+      },
+      {
+        "par": 7,
+        "rows": "R-2LR-3L-----------3------1-e--1---------4-3-4---3----4R4---R---"
+      },
+      {
+        "par": 4,
+        "rows": "-mL-4-3mb-4-4e--)2-3-42ld!3-3-m-r2-3-3-!-)-43-4-bm2e332-b-3-m--b"
+      }
+    ]
+  },
+  {
+    "name": "Many-Worlds ",
+    "difficulty": 0.35,
+    "description": "This game may actually be nine-dimensional, but if this is the case, functionality is not affected by the extra six dimensions.",
+    "levels": [
+      {
+        "par": 6,
+        "rows": "4RL3RL3LL------3R-3--3-R3--33--LL--33--3R-3--3-R3------LL3LR3LR4"
+      },
+      {
+        "par": 6,
+        "rows": "eeeeeeeeebbbb-beeb32--be---343beeb343---eb--23beeb-bbbbeeeeeeeee"
+      },
+      {
+        "par": 7,
+        "rows": "433)13%3*!13(34333$32@3&3)23^333233$33&3#333!32(1@*3433^3%433#13"
+      },
+      {
+        "par": 9,
+        "rows": "4-3LR4-d33--3dr3-34dr-4-4dr3-3-42-3-4lu23-3lu333-lu33-4-u--RL4-3"
+      },
+      {
+        "par": 7,
+        "rows": "4-4142411-2----44-4-41-22-1-24-44-4--2-11-2414-44------224142414"
+      },
+      {
+        "par": 10,
+        "rows": "4444444442322324431111344214412442144324431111344232232444444444"
+      },
+      {
+        "par": 6,
+        "rows": "3-3----3--e4-L--L---21L4-Le-21-L-R--21-RR-e-21R4---4-R--3-3----3"
+      },
+      {
+        "par": 8,
+        "rows": "R3----2134----22--bbbb----beeb----beeb----bbbb--43----R-24-----R"
+      },
+      {
+        "par": 11,
+        "rows": "44122244----------------3333333333333333----------------44222144"
+      }
+    ]
+  },
+  {
+    "name": "Proton Decay",
+    "difficulty": 0.4,
+    "description": "Have you heard that entropy isn't what it used to be?",
+    "levels": [
+      {
+        "par": 4,
+        "rows": "-3-3-l-4-----3-R-4----3--r-d-------------4---u4m-----------2---r"
+      },
+      {
+        "par": 4,
+        "rows": "m------mb23d--Lbm11R---mb-3-33ubmRu-4-)mb)--dl3bm--433umb------b"
+      },
+      {
+        "par": 6,
+        "rows": "!-3233--r--2321mbbbbbbbb)--e3--LL--3e--!bbbbbbbbm1232--l--3323-)"
+      },
+      {
+        "par": 6,
+        "rows": ")34l-mb432l3-b444u34b434u34b4334--b43324-b433223b43322334444433)"
+      },
+      {
+        "par": 5,
+        "rows": "3--33--m3--33--m3--34--m3--m1--44--1m--3m--43--3m--33--3m--33--3"
+      },
+      {
+        "par": 5,
+        "rows": "-d---L----4323---1e234----4324----bbb3---24--3---u3--3---L---R--"
+      },
+      {
+        "par": 3,
+        "rows": "4)be---L14b1b3-412b4b3-4u4b4b3-44lb4b2-44db4b11R4lb4bL-44Rb)b4-4"
+      },
+      {
+        "par": 4,
+        "rows": "m-43-1-2----3--3--3-4-3-4r-!#------#!--3-3-l------3--44-r---3--u"
+      },
+      {
+        "par": 4,
+        "rows": "r1-3b*-3-u--3b-3-1--4-b34e-2--1u-e2-214u-4----b3-u---b34u2-*b34R"
+      }
+    ]
+  },
+  {
+    "name": "Red Shift",
+    "difficulty": 0.45,
+    "description": "Sure, it starts small, but watch it expand at an incredible rate!",
+    "levels": [
+      {
+        "par": 3,
+        "rows": "----------)--3------------------------------------4--)----------"
+      },
+      {
+        "par": 4,
+        "rows": "----------)--4--4--43L--------------------------L-3--)----------"
+      },
+      {
+        "par": 5,
+        "rows": "R-d-------)--4--4--43L----------3------3-------3L-3--)-------r-R"
+      },
+      {
+        "par": 4,
+        "rows": "R-d----l--)--4-44--43L----------3--2---3-------3L-3--)-3-----r-R"
+      },
+      {
+        "par": 4,
+        "rows": "R-d--3-l--)--3-44--43L---3-3l---3--2---3-------3L-3--)-3-----r-R"
+      },
+      {
+        "par": 4,
+        "rows": "R-d--3-l3-)--3-44--43L---3-3l--23--4---3-4-----2Ll3--)-2-u4-3r-R"
+      },
+      {
+        "par": 4,
+        "rows": "R-d--3-l3R)-23-342-43L-3-3-3l-423--43--2-3-----2Ll3-L)-2-u3-4rrR"
+      },
+      {
+        "par": 5,
+        "rows": "R-d--3-l4R)-232333243L-3R3b3r-4232343-32-3r---u1Ll34L)-2-u332rrR"
+      },
+      {
+        "par": 5,
+        "rows": "R-d113-l4R)-232333243L-3R333r14232343132-3r11eu1Ll34L)32-u333rrR"
+      }
+    ]
+  },
+  {
+    "name": "Particles-a-Plenty",
+    "difficulty": 0.5,
+    "description": "Does a radioactive cat have 18 half-lives?",
+    "levels": [
+      {
+        "par": 8,
+        "rows": "---------r-d--l--4-d--4-b2b--b2bbe33-bebbbb2-b3b--d2--3d--rr11bl"
+      },
+      {
+        "par": 6,
+        "rows": "r--2---lr--2---uu--2-e-dde-2---dd--2---ld--2---ld--2-e-ur--2---u"
+      },
+      {
+        "par": 8,
+        "rows": "3-d--r-3--1l--!---e-3-----!-----L--2--@-b@2-u---r-2--u--ulmu---l"
+      },
+      {
+        "par": 7,
+        "rows": "----b----)-r--2dL--------3-3--------3-u-e--3-----r-u---3b----)--"
+      },
+      {
+        "par": 9,
+        "rows": "-2---bdlbeeeeb2-e1211b--br-1-b-------bb--e-3223u--u-r--e-r----u-"
+      },
+      {
+        "par": 9,
+        "rows": "R-3----L-3)3-3----3-2!32-3---23@2!2--3-3-3--3)3---3--3--L3@3---R"
+      },
+      {
+        "par": 13,
+        "rows": "m33333dbbbbbbb-b332bb23333R22L22332mm23233L33R3333322322bbbbbbbb"
+      },
+      {
+        "par": 7,
+        "rows": "bbbbbbbbb33--33bb322223bb32eb23bb32be23bb322223bb33--33bbbbbbbbb"
+      },
+      {
+        "par": 9,
+        "rows": "-2-----l-2---m2R-2----2--3----2--3---m2L-3------Re----3--Ll-3-l-"
+      }
+    ]
+  },
+  {
+    "name": "It's So Heisenbergian",
+    "difficulty": 0.55,
+    "description": "You may not know how fast these atoms are going. But at least you know where they are!",
+    "levels": [
+      {
+        "par": 6,
+        "rows": "--b33bde-)-33-)3b-b22bb-3324423333244233b-b22b-br!-33-!l-ub33b3e"
+      },
+      {
+        "par": 7,
+        "rows": "-d-----lr-----d---3bb3---r3bb3-u--3bb3lru-3bb3-ddr--d-----r---l-"
+      },
+      {
+        "par": 7,
+        "rows": "dl-lr-rd--d--d----3333--133b4331--34b3--13333331-r1221l-1-1331-1"
+      },
+      {
+        "par": 8,
+        "rows": "b3bbbbbbb3b3222lbedbbbb2br232db2bb-bb2b2bb-bb2b2br32232ubbrrrrru"
+      },
+      {
+        "par": 11,
+        "rows": "b-3----L-r---3-3--3-l2--m3-----b--r-3-3-d------u--3--l--L-u---ub"
+      },
+      {
+        "par": 10,
+        "rows": "---33e---3-dd3b---3-3-2-m--3---d----3)---u-2-3-------)-3--333u--"
+      },
+      {
+        "par": 6,
+        "rows": "33-----l--3---l----3-l------3------ru-----r--u---r----u-r------u"
+      },
+      {
+        "par": 10,
+        "rows": "----2!2-r3----d--)433--mr2-4@--m----2-l-@2--)-u---1-33--r2!2--l-"
+      },
+      {
+        "par": 6,
+        "rows": "---------L--2----33--m---m323m---m323m---m323m---m-232-------R--"
+      }
+    ]
+  }
+]

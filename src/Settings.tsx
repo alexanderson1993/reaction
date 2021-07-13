@@ -86,6 +86,24 @@ export function Settings() {
           Purchase
         </button>
       </form>
+      <hr className="my-4 w-16" />
+      <p>You can restore your purchase by entering your email address.</p>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <label className="flex flex-col">
+          Email Address:
+          <input
+            type="email"
+            className="w-[200px] bg-gray-900 bg-opacity-70 px-4 py-1 border-2 border-gray-400 flex align-center"
+          ></input>
+        </label>
+        <button className="gradient-box mt-4" type="submit">
+          Restore
+        </button>
+      </form>
       <button
         className="gradient-box mt-4"
         onClick={() => useLevelStore.getState().reset()}

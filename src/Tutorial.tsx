@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { useLevelStore } from "./stores/levelStore";
 import { Dialog, Transition } from "@headlessui/react";
-import gameData from "./components/gameData.json";
 
 export function Tutorial() {
   const okayRef = React.useRef<HTMLButtonElement>(null);
   const courseIndex = useLevelStore((store) => store.courseIndex) ?? -1;
   const levelIndex = useLevelStore((store) => store.levelIndex) ?? -1;
   const tutorialOn = useLevelStore((store) => store.tutorial);
+  const gameData = useLevelStore((store) => store.gameData);
   const { tutorialTitle, tutorial } = (gameData[courseIndex]?.levels?.[
     levelIndex
   ] || {}) as unknown as { tutorialTitle: string; tutorial: string };

@@ -25,7 +25,7 @@ const handler: Handler = async (event, context) => {
         },
       ],
       mode: "payment",
-      success_url: `https://reaction.fyreworks.us?success=true`,
+      success_url: `https://reaction.fyreworks.us?success=true&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `https://reaction.fyreworks.us?canceled=true`,
     });
     return {

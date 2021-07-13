@@ -44,6 +44,18 @@ function getLocalStorageNum(key: string) {
   if (isNaN(value)) return 1;
   return value;
 }
+function getGameData() {
+  let data: typeof gameData;
+  try {
+    data = JSON.parse(localStorage.getItem("game_data") || "");
+    if (!Array.isArray(data)) {
+      data = gameData;
+    }
+  } catch {
+    data = gameData;
+  }
+  return data;
+}
 export const useLevelStore = create<{
   state:
     | "rendering"
@@ -54,6 +66,7 @@ export const useLevelStore = create<{
     | "summary"
     | "levelSummary"
     | "settings";
+  gameData: typeof gameData;
   setRendered: () => void;
   showCourses: () => void;
   loadCourse: (courseIndex: number) => void;
@@ -81,6 +94,7 @@ export const useLevelStore = create<{
   soundVolume: number;
 }>((set, get) => ({
   state: "credits",
+  gameData: getGameData(),
   currentLevel: null,
   particleLocations: Array.from({ length: 100 })
     .fill(0)

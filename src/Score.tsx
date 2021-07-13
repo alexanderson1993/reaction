@@ -1,6 +1,5 @@
 import { Transition } from "@headlessui/react";
 import React from "react";
-import courseList from "./components/gameData.json";
 import { useLevelStore } from "./stores/levelStore";
 
 export function Score() {
@@ -8,8 +7,9 @@ export function Score() {
   const levelIndex = useLevelStore((store) => store.levelIndex);
   const courseIndex = useLevelStore((store) => store.courseIndex);
   const strokes = useLevelStore((store) => store.strokes);
-  const levelCount = courseList[courseIndex ?? -1]?.levels.length;
-  const par = courseList[courseIndex ?? -1]?.levels[levelIndex ?? -1]?.par;
+  const gameData = useLevelStore((store) => store.gameData);
+  const levelCount = gameData[courseIndex ?? -1]?.levels.length;
+  const par = gameData[courseIndex ?? -1]?.levels[levelIndex ?? -1]?.par;
   return (
     <Transition
       className="score transform"

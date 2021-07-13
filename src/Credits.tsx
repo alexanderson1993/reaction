@@ -1,6 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { Title } from "./components/Title";
-import courseList from "./components/gameData.json";
 import { useLevelStore } from "./stores/levelStore";
 import { Transition } from "@headlessui/react";
 import { Settings } from "./Settings";
@@ -9,6 +8,7 @@ export const Credits = () => {
   const startGame = (courseIndex: number) =>
     useLevelStore.getState().loadCourse(courseIndex);
   const state = useLevelStore((store) => store.state);
+  const gameData = useLevelStore((store) => store.gameData);
   const rendered = state !== "rendering";
   const courseListRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
@@ -66,7 +66,7 @@ export const Credits = () => {
         leaveFrom="scale-100"
         leaveTo="scale-0"
       >
-        {courseList
+        {gameData
           .map((course, index) => ({ ...course, courseIndex: index }))
           .sort((a, b) => {
             if (a.difficulty > b.difficulty) return 1;

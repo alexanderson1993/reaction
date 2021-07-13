@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useLevelStore } from "./stores/levelStore";
-import gameData from "./components/gameData.json";
 
 export function LevelSummary() {
   function close() {
@@ -14,6 +13,7 @@ export function LevelSummary() {
   const showDialog = state === "levelSummary";
   const courseIndex = useLevelStore((store) => store.courseIndex) ?? -1;
   const levelIndex = useLevelStore((store) => store.levelIndex) ?? -1;
+  const gameData = useLevelStore((store) => store.gameData) ?? -1;
   const { par } = gameData[courseIndex]?.levels?.[levelIndex] || {};
   return (
     <Transition show={showDialog} as={Fragment}>

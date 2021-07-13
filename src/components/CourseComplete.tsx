@@ -1,10 +1,8 @@
 import { useSpring, animated } from "@react-spring/three";
-import { Html } from "@react-three/drei";
 import React, { useMemo, useRef, useLayoutEffect } from "react";
 import { useLoader } from "@react-three/fiber";
 import { Color, FontLoader, Mesh, Vector3 } from "three";
 import { useLevelStore } from "../stores/levelStore";
-import courseList from "./gameData.json";
 import { A11y } from "@react-three/a11y";
 
 function useCenterAlign(mesh: React.MutableRefObject<Mesh | undefined>) {
@@ -43,12 +41,13 @@ export default function CourseComplete({
   const state = useLevelStore((state) => state.state);
   const strokes = useLevelStore((state) => state.strokes);
   const courseIndex = useLevelStore((state) => state.courseIndex);
+  const gameData = useLevelStore((state) => state.gameData);
   const totalStrokes = Object.values(strokes ?? []).reduce(
     (acc, next) => acc + next,
     0
   );
   const totalPar =
-    courseList[courseIndex ?? -1]?.levels
+    gameData[courseIndex ?? -1]?.levels
       .map((level) => level.par)
       .reduce((acc: number, next) => acc + next, 0) || 0;
   const { position } = useSpring({
