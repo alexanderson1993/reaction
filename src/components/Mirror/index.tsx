@@ -42,7 +42,7 @@ const Mirror = ({
         rotation={
           direction === "m"
             ? [Math.PI / 2, Math.PI / 4, 0]
-            : direction === "L"
+            : direction === "R"
             ? [0, 0, Math.PI / 4]
             : [0, 0, -Math.PI / 4]
         }

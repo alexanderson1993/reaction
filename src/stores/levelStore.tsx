@@ -338,10 +338,10 @@ export const useLevelStore = create<{
           case "R": {
             playSound({ url: "/wav/mirror.wav", pitch: true });
             let newDir: "u" | "d" | "l" | "r" = "u";
-            if (dir === "u") newDir = "l";
-            if (dir === "d") newDir = "r";
-            if (dir === "l") newDir = "u";
-            if (dir === "r") newDir = "d";
+            if (dir === "u") newDir = "r";
+            if (dir === "d") newDir = "l";
+            if (dir === "l") newDir = "d";
+            if (dir === "r") newDir = "u";
             get().setParticle(particleIndex, [newX, newY, newDir]);
 
             break;
@@ -349,10 +349,10 @@ export const useLevelStore = create<{
           case "L": {
             playSound({ url: "/wav/mirror.wav", pitch: true });
             let newDir: "u" | "d" | "l" | "r" = "u";
-            if (dir === "u") newDir = "r";
-            if (dir === "d") newDir = "l";
-            if (dir === "l") newDir = "d";
-            if (dir === "r") newDir = "u";
+            if (dir === "u") newDir = "l";
+            if (dir === "d") newDir = "r";
+            if (dir === "l") newDir = "u";
+            if (dir === "r") newDir = "d";
             get().setParticle(particleIndex, [newX, newY, newDir]);
 
             break;
